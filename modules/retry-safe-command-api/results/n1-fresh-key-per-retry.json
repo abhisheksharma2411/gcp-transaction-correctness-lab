@@ -1,0 +1,5 @@
+{
+  "providerEffects": 100,
+  "violationCount": 102,
+  "sampleViolation": "provider effect pe_000001 cannot be attributed to any operation or claim"
+}

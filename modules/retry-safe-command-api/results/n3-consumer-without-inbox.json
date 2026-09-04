@@ -1,0 +1,7 @@
+{
+  "ledgerPostings": 2,
+  "providerEffects": 1,
+  "violations": [
+    "business reference order-n3 posted 2 ledger entries for 1 provider effects"
+  ]
+}

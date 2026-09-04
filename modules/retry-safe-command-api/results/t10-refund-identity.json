@@ -1,0 +1,18 @@
+{
+  "effects": [
+    {
+      "effectRef": "pe_000001",
+      "idempotencyKey": "8131c4e6c48648a494494fece33e42720bb08ec8",
+      "amountMinor": 4999,
+      "currency": "USD",
+      "createdAtSeq": 1
+    },
+    {
+      "effectRef": "pe_000002",
+      "idempotencyKey": "1dfc03fe01a530f2af6f3390a8c5aafccec9d9fc",
+      "amountMinor": 4999,
+      "currency": "USD",
+      "createdAtSeq": 2
+    }
+  ]
+}

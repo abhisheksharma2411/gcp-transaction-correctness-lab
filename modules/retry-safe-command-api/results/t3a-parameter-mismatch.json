@@ -1,0 +1,31 @@
+{
+  "audit": {
+    "providerEffects": 1,
+    "providerAmountMinor": 4999,
+    "succeededOperations": 1,
+    "ledgerPostings": 1,
+    "ledgerAmountMinor": 4999,
+    "openOperations": 0,
+    "manualReviewOperations": 0,
+    "providerCalls": 1,
+    "providerLookups": 0,
+    "perBusinessReference": [
+      {
+        "businessReference": "order-1001",
+        "providerEffects": 1,
+        "succeededOperations": 1,
+        "ledgerPostings": 1,
+        "openOperations": 0
+      }
+    ],
+    "violations": []
+  },
+  "second": {
+    "status": "PARAMETER_MISMATCH",
+    "operationId": "op_mismatch",
+    "state": "SUCCEEDED",
+    "httpStatus": 422,
+    "replayed": false,
+    "failureCode": "operation_id_reused_with_different_parameters"
+  }
+}

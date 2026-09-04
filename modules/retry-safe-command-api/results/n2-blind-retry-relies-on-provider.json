@@ -1,0 +1,7 @@
+{
+  "providerEffects": 1,
+  "violations": [
+    "provider effect pe_000001 cannot be attributed to any operation or claim",
+    "succeeded operations (0) does not equal provider effects (1)"
+  ]
+}
