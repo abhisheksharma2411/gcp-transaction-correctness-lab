@@ -1,0 +1,10 @@
+{
+  "engine": "cloud-spanner-emulator",
+  "finalAttemptCount": 4,
+  "outcomes": [
+    "w1:committed:attempt3",
+    "w2:committed:attempt1",
+    "w3:committed:attempt2"
+  ],
+  "emulatorNote": "Read-write transactions and schema changes lock the entire database for exclusive access until completion (documented emulator difference)."
+}

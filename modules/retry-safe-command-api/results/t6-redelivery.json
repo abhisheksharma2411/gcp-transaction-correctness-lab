@@ -1,0 +1,25 @@
+{
+  "audit": {
+    "providerEffects": 1,
+    "providerAmountMinor": 4999,
+    "succeededOperations": 1,
+    "ledgerPostings": 1,
+    "ledgerAmountMinor": 4999,
+    "openOperations": 0,
+    "manualReviewOperations": 0,
+    "providerCalls": 1,
+    "providerLookups": 0,
+    "perBusinessReference": [
+      {
+        "businessReference": "order-6006",
+        "providerEffects": 1,
+        "succeededOperations": 1,
+        "ledgerPostings": 1,
+        "openOperations": 0
+      }
+    ],
+    "violations": []
+  },
+  "handled": 4,
+  "skippedDuplicates": 3
+}

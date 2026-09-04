@@ -1,0 +1,8 @@
+{
+  "engine": "cloud-spanner-emulator",
+  "note": "Spanner's row deletion policy does not delete rows whose timestamp column is NULL.",
+  "row": [
+    "OUTCOME_UNKNOWN",
+    null
+  ]
+}

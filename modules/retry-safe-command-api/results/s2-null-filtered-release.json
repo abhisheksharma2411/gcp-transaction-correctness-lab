@@ -1,0 +1,16 @@
+{
+  "engine": "cloud-spanner-emulator",
+  "generatedColumnAfterDecline": [
+    null
+  ],
+  "rows": [
+    [
+      "s2_declined",
+      "FAILED_FINAL"
+    ],
+    [
+      "s2_retry",
+      "IN_PROGRESS"
+    ]
+  ]
+}

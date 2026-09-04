@@ -1,0 +1,126 @@
+{
+  "generatedBy": "scripts/effect-report.ts",
+  "environment": "local, in-memory serializable store, deterministic provider simulator",
+  "label": "Synthetic test result",
+  "node": "v25.2.1",
+  "rows": [
+    {
+      "scenario": "sequential retries x100",
+      "fault": "none",
+      "requestsIssued": 100,
+      "providerCalls": 1,
+      "providerLookups": 0,
+      "providerEffects": 1,
+      "ledgerPostings": 1,
+      "openOperations": 0,
+      "manualReview": 0,
+      "storeAborts": 0,
+      "violations": 0,
+      "outcomes": {
+        "ACCEPTED": 100
+      }
+    },
+    {
+      "scenario": "concurrent first requests x8",
+      "fault": "none",
+      "requestsIssued": 8,
+      "providerCalls": 1,
+      "providerLookups": 0,
+      "providerEffects": 1,
+      "ledgerPostings": 1,
+      "openOperations": 0,
+      "manualReview": 0,
+      "storeAborts": 7,
+      "violations": 0,
+      "outcomes": {
+        "ACCEPTED": 1,
+        "IN_PROGRESS_ELSEWHERE": 7
+      }
+    },
+    {
+      "scenario": "provider succeeded, response lost, then 5 client retries",
+      "fault": "DROP_RESPONSE_AFTER_EFFECT",
+      "requestsIssued": 5,
+      "providerCalls": 1,
+      "providerLookups": 1,
+      "providerEffects": 1,
+      "ledgerPostings": 1,
+      "openOperations": 0,
+      "manualReview": 0,
+      "storeAborts": 0,
+      "violations": 0,
+      "outcomes": {
+        "PENDING_UNKNOWN": 5,
+        "ACCEPTED": 1
+      }
+    },
+    {
+      "scenario": "provider never received the request, reconciliation budget exhausted",
+      "fault": "TIMEOUT_BEFORE_EFFECT",
+      "requestsIssued": 1,
+      "providerCalls": 1,
+      "providerLookups": 2,
+      "providerEffects": 0,
+      "ledgerPostings": 0,
+      "openOperations": 0,
+      "manualReview": 1,
+      "storeAborts": 0,
+      "violations": 0,
+      "outcomes": {
+        "PENDING_UNKNOWN": 2,
+        "NEEDS_MANUAL_REVIEW": 1
+      }
+    },
+    {
+      "scenario": "event redelivered 3x plus a publish-side duplicate",
+      "fault": "at-least-once delivery",
+      "requestsIssued": 1,
+      "providerCalls": 1,
+      "providerLookups": 0,
+      "providerEffects": 1,
+      "ledgerPostings": 1,
+      "openOperations": 0,
+      "manualReview": 0,
+      "storeAborts": 0,
+      "violations": 0,
+      "outcomes": {
+        "ACCEPTED": 1,
+        "messagesHandled": 5
+      }
+    },
+    {
+      "scenario": "caller mints a new operation id on every retry (x25)",
+      "fault": "caller-side identity bug",
+      "requestsIssued": 25,
+      "providerCalls": 1,
+      "providerLookups": 0,
+      "providerEffects": 1,
+      "ledgerPostings": 1,
+      "openOperations": 0,
+      "manualReview": 0,
+      "storeAborts": 0,
+      "violations": 0,
+      "outcomes": {
+        "ACCEPTED": 1,
+        "BUSINESS_REFERENCE_CONFLICT": 24
+      }
+    },
+    {
+      "scenario": "retry arrives after the idempotency record was pruned",
+      "fault": "identity retention expiry",
+      "requestsIssued": 2,
+      "providerCalls": 1,
+      "providerLookups": 0,
+      "providerEffects": 1,
+      "ledgerPostings": 1,
+      "openOperations": 0,
+      "manualReview": 0,
+      "storeAborts": 0,
+      "violations": 0,
+      "outcomes": {
+        "ACCEPTED": 1,
+        "IDENTITY_EXPIRED": 1
+      }
+    }
+  ]
+}
