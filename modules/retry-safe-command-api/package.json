@@ -1,0 +1,22 @@
+{
+  "name": "retry-safe-command-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Retry-safe payment command API with a business-effect invariant harness. Companion lab for Article 1.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test tests/conformance.test.ts tests/negative-control.test.ts",
+    "report": "node scripts/effect-report.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:emulator": "node --test tests/spanner-emulator.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
