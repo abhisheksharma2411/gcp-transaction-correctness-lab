@@ -1,0 +1,50 @@
+{
+  "audit": {
+    "providerEffects": 1,
+    "providerAmountMinor": 4999,
+    "succeededOperations": 1,
+    "ledgerPostings": 1,
+    "ledgerAmountMinor": 4999,
+    "openOperations": 0,
+    "manualReviewOperations": 0,
+    "providerCalls": 2,
+    "providerLookups": 0,
+    "perBusinessReference": [
+      {
+        "businessReference": "order-9009",
+        "providerEffects": 1,
+        "succeededOperations": 1,
+        "ledgerPostings": 1,
+        "openOperations": 0
+      }
+    ],
+    "violations": []
+  },
+  "declined": {
+    "status": "DECLINED",
+    "operationId": "op_declined",
+    "state": "FAILED_FINAL",
+    "httpStatus": 402,
+    "providerEffectId": null,
+    "replayed": false,
+    "failureCode": "card_declined"
+  },
+  "replay": {
+    "status": "DECLINED",
+    "operationId": "op_declined",
+    "state": "FAILED_FINAL",
+    "httpStatus": 402,
+    "providerEffectId": null,
+    "replayed": true,
+    "failureCode": "card_declined"
+  },
+  "retryWithNewIdentity": {
+    "status": "ACCEPTED",
+    "operationId": "op_declined_retry_2",
+    "state": "SUCCEEDED",
+    "httpStatus": 201,
+    "providerEffectId": "pe_000001",
+    "replayed": false,
+    "failureCode": null
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "engine": "cloud-spanner-emulator",
+  "rejectedCode": "INTERNAL",
+  "rejectedMessage": "failed to marshal error message",
+  "note": "Emulator error text differs from production; the assertion is on committed state.",
+  "liveOperations": 1
+}
