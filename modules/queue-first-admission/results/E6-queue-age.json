@@ -1,0 +1,111 @@
+{
+  "question": "Under a 5x dependency slowdown with a deep depth limit and no promise check, does the age rule shed load that depth alone would have accepted?",
+  "open": {
+    "label": "E6 depth only / open-loop",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "slowdownFromMs": 20000,
+      "slowdownFactor": 5,
+      "admission": {
+        "maxQueueDepth": 5000,
+        "promiseMs": null,
+        "maxQueueAgeMs": null,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 10751,
+    "admitted": 10751,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 5339,
+    "completed": 5412,
+    "completedInWindow": 5111,
+    "unfinishedAtHorizon": 1455,
+    "goodputPerSec": 85.18,
+    "latency": {
+      "p50": 160.68,
+      "p95": 8846.48,
+      "p99": 9740.91,
+      "max": 12905.72
+    },
+    "maxQueueDepth": 1489,
+    "maxQueueAgeMs": 8000,
+    "peakConcurrency": 20,
+    "rejectReasons": {},
+    "perTenant": {
+      "acme": {
+        "admitted": 10751,
+        "rejected": 0,
+        "completed": 5412
+      }
+    }
+  },
+  "bounded": {
+    "label": "E6 age rule / bounded",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "slowdownFromMs": 20000,
+      "slowdownFactor": 5,
+      "admission": {
+        "maxQueueDepth": 5000,
+        "promiseMs": null,
+        "maxQueueAgeMs": 1500,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 10751,
+    "admitted": 5248,
+    "rejected": 5503,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 5248,
+    "completedInWindow": 5140,
+    "unfinishedAtHorizon": 108,
+    "goodputPerSec": 85.67,
+    "latency": {
+      "p50": 152.22,
+      "p95": 6057.63,
+      "p99": 7190.17,
+      "max": 10655.63
+    },
+    "maxQueueDepth": 299,
+    "maxQueueAgeMs": 7160.57,
+    "peakConcurrency": 20,
+    "rejectReasons": {
+      "QUEUE_FULL": 5503
+    },
+    "perTenant": {
+      "acme": {
+        "admitted": 5248,
+        "rejected": 5503,
+        "completed": 5248
+      }
+    }
+  }
+}

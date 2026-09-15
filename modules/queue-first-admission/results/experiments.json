@@ -1,0 +1,1045 @@
+{
+  "E1-baseline": {
+    "question": "Below capacity, does admission control cost anything?",
+    "open": {
+      "label": "E1 0.6x / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {}
+      },
+      "arrived": 7151,
+      "admitted": 7151,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 7151,
+      "completedInWindow": 7132,
+      "unfinishedAtHorizon": 19,
+      "goodputPerSec": 118.87,
+      "latency": {
+        "p50": 69.82,
+        "p95": 300.22,
+        "p99": 483.73,
+        "max": 997.13
+      },
+      "maxQueueDepth": 8,
+      "maxQueueAgeMs": 58.95,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 7151,
+          "rejected": 0,
+          "completed": 7151
+        }
+      }
+    },
+    "bounded": {
+      "label": "E1 0.6x / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 7151,
+      "admitted": 7151,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 7151,
+      "completedInWindow": 7132,
+      "unfinishedAtHorizon": 19,
+      "goodputPerSec": 118.87,
+      "latency": {
+        "p50": 69.82,
+        "p95": 300.22,
+        "p99": 483.73,
+        "max": 997.13
+      },
+      "maxQueueDepth": 8,
+      "maxQueueAgeMs": 58.95,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 7151,
+          "rejected": 0,
+          "completed": 7151
+        }
+      }
+    }
+  },
+  "E2-burst": {
+    "question": "A short burst to 4x. Does the system recover, and what did callers see?",
+    "open": {
+      "label": "E2 burst 4x / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "phases": [
+          {
+            "fromMs": 0,
+            "toMs": 20000,
+            "ratePerSec": {}
+          },
+          {
+            "fromMs": 20000,
+            "toMs": 30000,
+            "ratePerSec": {}
+          },
+          {
+            "fromMs": 30000,
+            "toMs": 60000,
+            "ratePerSec": {}
+          }
+        ]
+      },
+      "arrived": 13977,
+      "admitted": 13977,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 4295,
+      "completed": 9682,
+      "completedInWindow": 9670,
+      "unfinishedAtHorizon": 12,
+      "goodputPerSec": 161.17,
+      "latency": {
+        "p50": 2532.96,
+        "p95": 8107.55,
+        "p99": 8275.46,
+        "max": 8744.25
+      },
+      "maxQueueDepth": 5914,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 13977,
+          "rejected": 0,
+          "completed": 9682
+        }
+      }
+    },
+    "bounded": {
+      "label": "E2 burst 4x / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "phases": [
+          {
+            "fromMs": 0,
+            "toMs": 20000,
+            "ratePerSec": {}
+          },
+          {
+            "fromMs": 20000,
+            "toMs": 30000,
+            "ratePerSec": {}
+          },
+          {
+            "fromMs": 30000,
+            "toMs": 60000,
+            "ratePerSec": {}
+          }
+        ],
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 13977,
+      "admitted": 8167,
+      "rejected": 5810,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 8167,
+      "completedInWindow": 8155,
+      "unfinishedAtHorizon": 12,
+      "goodputPerSec": 135.92,
+      "latency": {
+        "p50": 115.53,
+        "p95": 1852.24,
+        "p99": 2023.29,
+        "max": 2477.88
+      },
+      "maxQueueDepth": 360,
+      "maxQueueAgeMs": 1899.79,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "TENANT_SHARE_EXCEEDED": 2489,
+        "QUEUE_FULL": 3321
+      },
+      "perTenant": {
+        "acme": {
+          "admitted": 8167,
+          "rejected": 5810,
+          "completed": 8167
+        }
+      }
+    }
+  },
+  "E3-sustained-overload": {
+    "question": "Sustained 2x. What happens to p99 and to callers who gave up?",
+    "open": {
+      "label": "E3 2x sustained / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {}
+      },
+      "arrived": 23986,
+      "admitted": 23986,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 10364,
+      "completed": 13622,
+      "completedInWindow": 11965,
+      "unfinishedAtHorizon": 3253,
+      "goodputPerSec": 199.42,
+      "latency": {
+        "p50": 8037.92,
+        "p95": 8266.19,
+        "p99": 8427.6,
+        "max": 9020.16
+      },
+      "maxQueueDepth": 3280,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 23986,
+          "rejected": 0,
+          "completed": 13622
+        }
+      }
+    },
+    "bounded": {
+      "label": "E3 2x sustained / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 23986,
+      "admitted": 12345,
+      "rejected": 11641,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 12345,
+      "completedInWindow": 11965,
+      "unfinishedAtHorizon": 380,
+      "goodputPerSec": 199.42,
+      "latency": {
+        "p50": 1271.77,
+        "p95": 2009.79,
+        "p99": 2165.31,
+        "max": 2853.83
+      },
+      "maxQueueDepth": 360,
+      "maxQueueAgeMs": 2024.14,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "TENANT_SHARE_EXCEEDED": 2896,
+        "QUEUE_FULL": 8745
+      },
+      "perTenant": {
+        "acme": {
+          "admitted": 12345,
+          "rejected": 11641,
+          "completed": 12345
+        }
+      }
+    }
+  },
+  "E4-worker-slowdown": {
+    "question": "The dependency slows 3x mid-run at constant load. Does admission adapt?",
+    "open": {
+      "label": "E4 slowdown 3x / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "slowdownFromMs": 25000,
+        "slowdownFactor": 3
+      },
+      "arrived": 9531,
+      "admitted": 9531,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 2741,
+      "completed": 6790,
+      "completedInWindow": 6235,
+      "unfinishedAtHorizon": 1263,
+      "goodputPerSec": 103.92,
+      "latency": {
+        "p50": 194.37,
+        "p95": 8511.86,
+        "p99": 9024.5,
+        "max": 10215.22
+      },
+      "maxQueueDepth": 1332,
+      "maxQueueAgeMs": 7999.99,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 9531,
+          "rejected": 0,
+          "completed": 6790
+        }
+      }
+    },
+    "bounded": {
+      "label": "E4 slowdown 3x / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "slowdownFromMs": 25000,
+        "slowdownFactor": 3,
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 9531,
+      "admitted": 6409,
+      "rejected": 3122,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 6409,
+      "completedInWindow": 6277,
+      "unfinishedAtHorizon": 132,
+      "goodputPerSec": 104.62,
+      "latency": {
+        "p50": 162.1,
+        "p95": 2385.63,
+        "p99": 3348.96,
+        "max": 4804.65
+      },
+      "maxQueueDepth": 204,
+      "maxQueueAgeMs": 3367.12,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "PROJECTED_WAIT_EXCEEDS_PROMISE": 694,
+        "QUEUE_FULL": 2428
+      },
+      "perTenant": {
+        "acme": {
+          "admitted": 6409,
+          "rejected": 3122,
+          "completed": 6409
+        }
+      }
+    }
+  },
+  "E5-connection-limit": {
+    "question": "Halve the worker slots, as a connection or session pool would. Same offered load.",
+    "open": {
+      "label": "E5 slots 20->10 / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 10,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {}
+      },
+      "arrived": 9531,
+      "admitted": 9531,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 2781,
+      "completed": 6750,
+      "completedInWindow": 5926,
+      "unfinishedAtHorizon": 1254,
+      "goodputPerSec": 98.77,
+      "latency": {
+        "p50": 8019.21,
+        "p95": 8243.22,
+        "p99": 8401.16,
+        "max": 8981.61
+      },
+      "maxQueueDepth": 1342,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 10,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 9531,
+          "rejected": 0,
+          "completed": 6750
+        }
+      }
+    },
+    "bounded": {
+      "label": "E5 slots 20->10 / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 10,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 9531,
+      "admitted": 5919,
+      "rejected": 3612,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 5919,
+      "completedInWindow": 5894,
+      "unfinishedAtHorizon": 25,
+      "goodputPerSec": 98.23,
+      "latency": {
+        "p50": 1177.52,
+        "p95": 2253.93,
+        "p99": 2453.7,
+        "max": 3036.53
+      },
+      "maxQueueDepth": 221,
+      "maxQueueAgeMs": 2434.86,
+      "peakConcurrency": 10,
+      "rejectReasons": {
+        "PROJECTED_WAIT_EXCEEDS_PROMISE": 448,
+        "QUEUE_FULL": 3164
+      },
+      "perTenant": {
+        "acme": {
+          "admitted": 5919,
+          "rejected": 3612,
+          "completed": 5919
+        }
+      }
+    }
+  },
+  "E6-queue-age": {
+    "question": "Under a 5x dependency slowdown with a deep depth limit and no promise check, does the age rule shed load that depth alone would have accepted?",
+    "open": {
+      "label": "E6 depth only / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "slowdownFromMs": 20000,
+        "slowdownFactor": 5,
+        "admission": {
+          "maxQueueDepth": 5000,
+          "promiseMs": null,
+          "maxQueueAgeMs": null,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 10751,
+      "admitted": 10751,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 5339,
+      "completed": 5412,
+      "completedInWindow": 5111,
+      "unfinishedAtHorizon": 1455,
+      "goodputPerSec": 85.18,
+      "latency": {
+        "p50": 160.68,
+        "p95": 8846.48,
+        "p99": 9740.91,
+        "max": 12905.72
+      },
+      "maxQueueDepth": 1489,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 10751,
+          "rejected": 0,
+          "completed": 5412
+        }
+      }
+    },
+    "bounded": {
+      "label": "E6 age rule / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "slowdownFromMs": 20000,
+        "slowdownFactor": 5,
+        "admission": {
+          "maxQueueDepth": 5000,
+          "promiseMs": null,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 10751,
+      "admitted": 5248,
+      "rejected": 5503,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 5248,
+      "completedInWindow": 5140,
+      "unfinishedAtHorizon": 108,
+      "goodputPerSec": 85.67,
+      "latency": {
+        "p50": 152.22,
+        "p95": 6057.63,
+        "p99": 7190.17,
+        "max": 10655.63
+      },
+      "maxQueueDepth": 299,
+      "maxQueueAgeMs": 7160.57,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "QUEUE_FULL": 5503
+      },
+      "perTenant": {
+        "acme": {
+          "admitted": 5248,
+          "rejected": 5503,
+          "completed": 5248
+        }
+      }
+    }
+  },
+  "E7-fairness": {
+    "question": "One tenant floods at 3x while a neighbour sends 0.3x. Is the neighbour protected?",
+    "open": {
+      "label": "E7 noisy neighbour / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {}
+      },
+      "arrived": 39600,
+      "admitted": 39600,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 26099,
+      "completed": 13501,
+      "completedInWindow": 11879,
+      "unfinishedAtHorizon": 5292,
+      "goodputPerSec": 197.98,
+      "latency": {
+        "p50": 8050,
+        "p95": 8281.07,
+        "p99": 8438.17,
+        "max": 9017.82
+      },
+      "maxQueueDepth": 5420,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "flooder": {
+          "admitted": 36014,
+          "rejected": 0,
+          "completed": 12319
+        },
+        "neighbour": {
+          "admitted": 3586,
+          "rejected": 0,
+          "completed": 1182
+        }
+      }
+    },
+    "bounded": {
+      "label": "E7 noisy neighbour / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 39600,
+      "admitted": 12033,
+      "rejected": 27567,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 12033,
+      "completedInWindow": 11899,
+      "unfinishedAtHorizon": 134,
+      "goodputPerSec": 198.32,
+      "latency": {
+        "p50": 1469.17,
+        "p95": 1733.21,
+        "p99": 1893.48,
+        "max": 2456.28
+      },
+      "maxQueueDepth": 322,
+      "maxQueueAgeMs": 1675.54,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "PROJECTED_WAIT_EXCEEDS_PROMISE": 22456,
+        "QUEUE_FULL": 5111
+      },
+      "perTenant": {
+        "flooder": {
+          "admitted": 8895,
+          "rejected": 27119,
+          "completed": 8895
+        },
+        "neighbour": {
+          "admitted": 3138,
+          "rejected": 448,
+          "completed": 3138
+        }
+      }
+    }
+  },
+  "E8-recovery": {
+    "question": "After overload ends, how long until callers see normal latency again?",
+    "open": {
+      "label": "E8 recovery / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "phases": [
+          {
+            "fromMs": 0,
+            "toMs": 30000,
+            "ratePerSec": {}
+          },
+          {
+            "fromMs": 30000,
+            "toMs": 60000,
+            "ratePerSec": {}
+          }
+        ]
+      },
+      "arrived": 20924,
+      "admitted": 20924,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 10323,
+      "completed": 10601,
+      "completedInWindow": 10585,
+      "unfinishedAtHorizon": 16,
+      "goodputPerSec": 176.42,
+      "latency": {
+        "p50": 7857.15,
+        "p95": 8225.31,
+        "p99": 8370.29,
+        "max": 8862.8
+      },
+      "maxQueueDepth": 4928,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "acme": {
+          "admitted": 20924,
+          "rejected": 0,
+          "completed": 10601
+        }
+      }
+    },
+    "bounded": {
+      "label": "E8 recovery / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "phases": [
+          {
+            "fromMs": 0,
+            "toMs": 30000,
+            "ratePerSec": {}
+          },
+          {
+            "fromMs": 30000,
+            "toMs": 60000,
+            "ratePerSec": {}
+          }
+        ],
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 20924,
+      "admitted": 9335,
+      "rejected": 11589,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 9335,
+      "completedInWindow": 9319,
+      "unfinishedAtHorizon": 16,
+      "goodputPerSec": 155.32,
+      "latency": {
+        "p50": 857.12,
+        "p95": 1987.75,
+        "p99": 2151.74,
+        "max": 2662.98
+      },
+      "maxQueueDepth": 360,
+      "maxQueueAgeMs": 1981.62,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "TENANT_SHARE_EXCEEDED": 4035,
+        "QUEUE_FULL": 7554
+      },
+      "perTenant": {
+        "acme": {
+          "admitted": 9335,
+          "rejected": 11589,
+          "completed": 9335
+        }
+      }
+    }
+  },
+  "E9-deferrable": {
+    "question": "When work may be deferred, does a reservation beat a refusal?",
+    "open": {
+      "label": "E9 deferrable 2x / open-loop",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {}
+      },
+      "arrived": 23986,
+      "admitted": 23986,
+      "rejected": 0,
+      "deferred": 0,
+      "expired": 0,
+      "abandoned": 10364,
+      "completed": 13622,
+      "completedInWindow": 11965,
+      "unfinishedAtHorizon": 3253,
+      "goodputPerSec": 199.42,
+      "latency": {
+        "p50": 8037.92,
+        "p95": 8266.19,
+        "p99": 8427.6,
+        "max": 9020.16
+      },
+      "maxQueueDepth": 3280,
+      "maxQueueAgeMs": 8000,
+      "peakConcurrency": 20,
+      "rejectReasons": {},
+      "perTenant": {
+        "bulk-async": {
+          "admitted": 23986,
+          "rejected": 0,
+          "completed": 13622
+        }
+      }
+    },
+    "bounded": {
+      "label": "E9 deferrable 2x / bounded",
+      "config": {
+        "seed": 1234,
+        "durationMs": 60000,
+        "meanServiceMs": 100,
+        "worker": {
+          "concurrency": 20,
+          "contentionPerUnit": 0,
+          "contentionKnee": 20
+        },
+        "abandonAfterMs": 8000,
+        "reservationTtlMs": 30000,
+        "arrivalRatePerSec": {},
+        "admission": {
+          "maxQueueDepth": 600,
+          "promiseMs": 2000,
+          "maxQueueAgeMs": 1500,
+          "maxTenantShare": 0.6,
+          "maxReservations": 2000,
+          "fairShareProjection": true
+        }
+      },
+      "arrived": 23986,
+      "admitted": 776,
+      "rejected": 9999,
+      "deferred": 13211,
+      "expired": 0,
+      "abandoned": 0,
+      "completed": 13987,
+      "completedInWindow": 11989,
+      "unfinishedAtHorizon": 1998,
+      "goodputPerSec": 199.82,
+      "latency": {
+        "p50": 9907.17,
+        "p95": 10242.91,
+        "p99": 10408.94,
+        "max": 11062.56
+      },
+      "maxQueueDepth": 1980,
+      "maxQueueAgeMs": 10214.94,
+      "peakConcurrency": 20,
+      "rejectReasons": {
+        "QUEUE_FULL": 9999
+      },
+      "perTenant": {
+        "bulk-async": {
+          "admitted": 776,
+          "rejected": 9999,
+          "completed": 13987
+        }
+      }
+    }
+  },
+  "envelope-0": [
+    {
+      "slots": 10,
+      "offeredMultiple": 3,
+      "goodputPerSec": 100.75,
+      "p99Ms": 2585.22
+    },
+    {
+      "slots": 20,
+      "offeredMultiple": 3,
+      "goodputPerSec": 201.78,
+      "p99Ms": 2174.88
+    },
+    {
+      "slots": 40,
+      "offeredMultiple": 3,
+      "goodputPerSec": 398.73,
+      "p99Ms": 1357.51
+    },
+    {
+      "slots": 80,
+      "offeredMultiple": 3,
+      "goodputPerSec": 599.27,
+      "p99Ms": 463.36
+    },
+    {
+      "slots": 160,
+      "offeredMultiple": 3,
+      "goodputPerSec": 599.27,
+      "p99Ms": 463.36
+    }
+  ],
+  "envelope-0.05": [
+    {
+      "slots": 10,
+      "offeredMultiple": 3,
+      "goodputPerSec": 100.75,
+      "p99Ms": 2585.22
+    },
+    {
+      "slots": 20,
+      "offeredMultiple": 3,
+      "goodputPerSec": 201.78,
+      "p99Ms": 2174.88
+    },
+    {
+      "slots": 40,
+      "offeredMultiple": 3,
+      "goodputPerSec": 203.15,
+      "p99Ms": 2548.97
+    },
+    {
+      "slots": 80,
+      "offeredMultiple": 3,
+      "goodputPerSec": 203.08,
+      "p99Ms": 3380.29
+    },
+    {
+      "slots": 160,
+      "offeredMultiple": 3,
+      "goodputPerSec": 201.4,
+      "p99Ms": 5014.74
+    }
+  ]
+}

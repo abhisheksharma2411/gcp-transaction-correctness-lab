@@ -1,0 +1,97 @@
+{
+  "question": "Below capacity, does admission control cost anything?",
+  "open": {
+    "label": "E1 0.6x / open-loop",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {}
+    },
+    "arrived": 7151,
+    "admitted": 7151,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 7151,
+    "completedInWindow": 7132,
+    "unfinishedAtHorizon": 19,
+    "goodputPerSec": 118.87,
+    "latency": {
+      "p50": 69.82,
+      "p95": 300.22,
+      "p99": 483.73,
+      "max": 997.13
+    },
+    "maxQueueDepth": 8,
+    "maxQueueAgeMs": 58.95,
+    "peakConcurrency": 20,
+    "rejectReasons": {},
+    "perTenant": {
+      "acme": {
+        "admitted": 7151,
+        "rejected": 0,
+        "completed": 7151
+      }
+    }
+  },
+  "bounded": {
+    "label": "E1 0.6x / bounded",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "admission": {
+        "maxQueueDepth": 600,
+        "promiseMs": 2000,
+        "maxQueueAgeMs": 1500,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 7151,
+    "admitted": 7151,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 7151,
+    "completedInWindow": 7132,
+    "unfinishedAtHorizon": 19,
+    "goodputPerSec": 118.87,
+    "latency": {
+      "p50": 69.82,
+      "p95": 300.22,
+      "p99": 483.73,
+      "max": 997.13
+    },
+    "maxQueueDepth": 8,
+    "maxQueueAgeMs": 58.95,
+    "peakConcurrency": 20,
+    "rejectReasons": {},
+    "perTenant": {
+      "acme": {
+        "admitted": 7151,
+        "rejected": 0,
+        "completed": 7151
+      }
+    }
+  }
+}

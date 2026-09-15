@@ -1,0 +1,100 @@
+{
+  "question": "Halve the worker slots, as a connection or session pool would. Same offered load.",
+  "open": {
+    "label": "E5 slots 20->10 / open-loop",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 10,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {}
+    },
+    "arrived": 9531,
+    "admitted": 9531,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 2781,
+    "completed": 6750,
+    "completedInWindow": 5926,
+    "unfinishedAtHorizon": 1254,
+    "goodputPerSec": 98.77,
+    "latency": {
+      "p50": 8019.21,
+      "p95": 8243.22,
+      "p99": 8401.16,
+      "max": 8981.61
+    },
+    "maxQueueDepth": 1342,
+    "maxQueueAgeMs": 8000,
+    "peakConcurrency": 10,
+    "rejectReasons": {},
+    "perTenant": {
+      "acme": {
+        "admitted": 9531,
+        "rejected": 0,
+        "completed": 6750
+      }
+    }
+  },
+  "bounded": {
+    "label": "E5 slots 20->10 / bounded",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 10,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "admission": {
+        "maxQueueDepth": 600,
+        "promiseMs": 2000,
+        "maxQueueAgeMs": 1500,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 9531,
+    "admitted": 5919,
+    "rejected": 3612,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 5919,
+    "completedInWindow": 5894,
+    "unfinishedAtHorizon": 25,
+    "goodputPerSec": 98.23,
+    "latency": {
+      "p50": 1177.52,
+      "p95": 2253.93,
+      "p99": 2453.7,
+      "max": 3036.53
+    },
+    "maxQueueDepth": 221,
+    "maxQueueAgeMs": 2434.86,
+    "peakConcurrency": 10,
+    "rejectReasons": {
+      "PROJECTED_WAIT_EXCEEDS_PROMISE": 448,
+      "QUEUE_FULL": 3164
+    },
+    "perTenant": {
+      "acme": {
+        "admitted": 5919,
+        "rejected": 3612,
+        "completed": 5919
+      }
+    }
+  }
+}

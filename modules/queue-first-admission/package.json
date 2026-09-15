@@ -1,0 +1,21 @@
+{
+  "name": "queue-first-admission",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Bounded-admission overload control with a deterministic discrete-event harness. Companion lab for Article 2.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "node --test tests/admission.test.ts tests/invariants.test.ts tests/negative-control.test.ts",
+    "report": "node scripts/experiments.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}

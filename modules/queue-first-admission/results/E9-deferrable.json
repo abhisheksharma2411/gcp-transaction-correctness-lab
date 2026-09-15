@@ -1,0 +1,99 @@
+{
+  "question": "When work may be deferred, does a reservation beat a refusal?",
+  "open": {
+    "label": "E9 deferrable 2x / open-loop",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {}
+    },
+    "arrived": 23986,
+    "admitted": 23986,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 10364,
+    "completed": 13622,
+    "completedInWindow": 11965,
+    "unfinishedAtHorizon": 3253,
+    "goodputPerSec": 199.42,
+    "latency": {
+      "p50": 8037.92,
+      "p95": 8266.19,
+      "p99": 8427.6,
+      "max": 9020.16
+    },
+    "maxQueueDepth": 3280,
+    "maxQueueAgeMs": 8000,
+    "peakConcurrency": 20,
+    "rejectReasons": {},
+    "perTenant": {
+      "bulk-async": {
+        "admitted": 23986,
+        "rejected": 0,
+        "completed": 13622
+      }
+    }
+  },
+  "bounded": {
+    "label": "E9 deferrable 2x / bounded",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "admission": {
+        "maxQueueDepth": 600,
+        "promiseMs": 2000,
+        "maxQueueAgeMs": 1500,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 23986,
+    "admitted": 776,
+    "rejected": 9999,
+    "deferred": 13211,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 13987,
+    "completedInWindow": 11989,
+    "unfinishedAtHorizon": 1998,
+    "goodputPerSec": 199.82,
+    "latency": {
+      "p50": 9907.17,
+      "p95": 10242.91,
+      "p99": 10408.94,
+      "max": 11062.56
+    },
+    "maxQueueDepth": 1980,
+    "maxQueueAgeMs": 10214.94,
+    "peakConcurrency": 20,
+    "rejectReasons": {
+      "QUEUE_FULL": 9999
+    },
+    "perTenant": {
+      "bulk-async": {
+        "admitted": 776,
+        "rejected": 9999,
+        "completed": 13987
+      }
+    }
+  }
+}

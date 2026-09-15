@@ -1,0 +1,124 @@
+{
+  "question": "After overload ends, how long until callers see normal latency again?",
+  "open": {
+    "label": "E8 recovery / open-loop",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "phases": [
+        {
+          "fromMs": 0,
+          "toMs": 30000,
+          "ratePerSec": {}
+        },
+        {
+          "fromMs": 30000,
+          "toMs": 60000,
+          "ratePerSec": {}
+        }
+      ]
+    },
+    "arrived": 20924,
+    "admitted": 20924,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 10323,
+    "completed": 10601,
+    "completedInWindow": 10585,
+    "unfinishedAtHorizon": 16,
+    "goodputPerSec": 176.42,
+    "latency": {
+      "p50": 7857.15,
+      "p95": 8225.31,
+      "p99": 8370.29,
+      "max": 8862.8
+    },
+    "maxQueueDepth": 4928,
+    "maxQueueAgeMs": 8000,
+    "peakConcurrency": 20,
+    "rejectReasons": {},
+    "perTenant": {
+      "acme": {
+        "admitted": 20924,
+        "rejected": 0,
+        "completed": 10601
+      }
+    }
+  },
+  "bounded": {
+    "label": "E8 recovery / bounded",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "phases": [
+        {
+          "fromMs": 0,
+          "toMs": 30000,
+          "ratePerSec": {}
+        },
+        {
+          "fromMs": 30000,
+          "toMs": 60000,
+          "ratePerSec": {}
+        }
+      ],
+      "admission": {
+        "maxQueueDepth": 600,
+        "promiseMs": 2000,
+        "maxQueueAgeMs": 1500,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 20924,
+    "admitted": 9335,
+    "rejected": 11589,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 9335,
+    "completedInWindow": 9319,
+    "unfinishedAtHorizon": 16,
+    "goodputPerSec": 155.32,
+    "latency": {
+      "p50": 857.12,
+      "p95": 1987.75,
+      "p99": 2151.74,
+      "max": 2662.98
+    },
+    "maxQueueDepth": 360,
+    "maxQueueAgeMs": 1981.62,
+    "peakConcurrency": 20,
+    "rejectReasons": {
+      "TENANT_SHARE_EXCEEDED": 4035,
+      "QUEUE_FULL": 7554
+    },
+    "perTenant": {
+      "acme": {
+        "admitted": 9335,
+        "rejected": 11589,
+        "completed": 9335
+      }
+    }
+  }
+}

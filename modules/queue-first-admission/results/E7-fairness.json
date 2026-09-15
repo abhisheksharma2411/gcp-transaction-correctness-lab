@@ -1,0 +1,110 @@
+{
+  "question": "One tenant floods at 3x while a neighbour sends 0.3x. Is the neighbour protected?",
+  "open": {
+    "label": "E7 noisy neighbour / open-loop",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {}
+    },
+    "arrived": 39600,
+    "admitted": 39600,
+    "rejected": 0,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 26099,
+    "completed": 13501,
+    "completedInWindow": 11879,
+    "unfinishedAtHorizon": 5292,
+    "goodputPerSec": 197.98,
+    "latency": {
+      "p50": 8050,
+      "p95": 8281.07,
+      "p99": 8438.17,
+      "max": 9017.82
+    },
+    "maxQueueDepth": 5420,
+    "maxQueueAgeMs": 8000,
+    "peakConcurrency": 20,
+    "rejectReasons": {},
+    "perTenant": {
+      "flooder": {
+        "admitted": 36014,
+        "rejected": 0,
+        "completed": 12319
+      },
+      "neighbour": {
+        "admitted": 3586,
+        "rejected": 0,
+        "completed": 1182
+      }
+    }
+  },
+  "bounded": {
+    "label": "E7 noisy neighbour / bounded",
+    "config": {
+      "seed": 1234,
+      "durationMs": 60000,
+      "meanServiceMs": 100,
+      "worker": {
+        "concurrency": 20,
+        "contentionPerUnit": 0,
+        "contentionKnee": 20
+      },
+      "abandonAfterMs": 8000,
+      "reservationTtlMs": 30000,
+      "arrivalRatePerSec": {},
+      "admission": {
+        "maxQueueDepth": 600,
+        "promiseMs": 2000,
+        "maxQueueAgeMs": 1500,
+        "maxTenantShare": 0.6,
+        "maxReservations": 2000,
+        "fairShareProjection": true
+      }
+    },
+    "arrived": 39600,
+    "admitted": 12033,
+    "rejected": 27567,
+    "deferred": 0,
+    "expired": 0,
+    "abandoned": 0,
+    "completed": 12033,
+    "completedInWindow": 11899,
+    "unfinishedAtHorizon": 134,
+    "goodputPerSec": 198.32,
+    "latency": {
+      "p50": 1469.17,
+      "p95": 1733.21,
+      "p99": 1893.48,
+      "max": 2456.28
+    },
+    "maxQueueDepth": 322,
+    "maxQueueAgeMs": 1675.54,
+    "peakConcurrency": 20,
+    "rejectReasons": {
+      "PROJECTED_WAIT_EXCEEDS_PROMISE": 22456,
+      "QUEUE_FULL": 5111
+    },
+    "perTenant": {
+      "flooder": {
+        "admitted": 8895,
+        "rejected": 27119,
+        "completed": 8895
+      },
+      "neighbour": {
+        "admitted": 3138,
+        "rejected": 448,
+        "completed": 3138
+      }
+    }
+  }
+}
