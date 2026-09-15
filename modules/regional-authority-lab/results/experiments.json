@@ -1,0 +1,8480 @@
+{
+  "E1-normal-cross-region": {
+    "question": "A write from the non-leader region with everything healthy.",
+    "safe": {
+      "label": "E1",
+      "commits": [
+        {
+          "operationId": "n1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 1000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "n1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 1000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E1",
+      "commits": [
+        {
+          "operationId": "n1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 1000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "n1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 1000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E2-duplicate-across-regions": {
+    "question": "The same operation id arrives in both regions. Two accepted writes?",
+    "safe": {
+      "label": "E2",
+      "commits": [
+        {
+          "operationId": "d1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 1000
+        },
+        {
+          "operationId": "d1",
+          "outcome": "REJECTED_DUPLICATE",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 2000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "d1",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 1000
+        },
+        {
+          "operationId": "d1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 2000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E2",
+      "commits": [
+        {
+          "operationId": "d1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 1000
+        },
+        {
+          "operationId": "d1",
+          "outcome": "REJECTED_DUPLICATE",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 2000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "d1",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 1000
+        },
+        {
+          "operationId": "d1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 2000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E3-leader-partitioned": {
+    "question": "The leader region is isolated. A write lands in the minority side.",
+    "safe": {
+      "label": "E3",
+      "commits": [
+        {
+          "operationId": "p1",
+          "outcome": "NO_QUORUM",
+          "acks": [
+            "east-a",
+            "east-b"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "p1",
+          "decidedIn": "us-east",
+          "outcome": "SAFE_MODE",
+          "fromLocalState": false,
+          "atMs": 25000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 1,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E3",
+      "commits": [
+        {
+          "operationId": "p1",
+          "outcome": "NO_QUORUM",
+          "acks": [
+            "east-a",
+            "east-b"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "p1",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": true,
+          "atMs": 25000
+        }
+      ],
+      "unbackedFulfilments": [
+        "p1"
+      ],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 1,
+      "unconfirmedFulfilments": 1,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E4-majority-side-during-partition": {
+    "question": "Same partition, but the write lands in the majority side.",
+    "safe": {
+      "label": "E4",
+      "commits": [
+        {
+          "operationId": "m1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-west",
+          "atMs": 35000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "m1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 35000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E4",
+      "commits": [
+        {
+          "operationId": "m1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-west",
+          "atMs": 35000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "m1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 35000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E5-during-leader-election": {
+    "question": "A write arrives inside the election window, before a new leader exists.",
+    "safe": {
+      "label": "E5",
+      "commits": [
+        {
+          "operationId": "e1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 22000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "e1",
+          "decidedIn": "us-west",
+          "outcome": "SAFE_MODE",
+          "fromLocalState": false,
+          "atMs": 22000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 1,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E5",
+      "commits": [
+        {
+          "operationId": "e1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 22000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "e1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": true,
+          "atMs": 22000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 1,
+      "unconfirmedFulfilments": 1,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E6-after-leader-election": {
+    "question": "Same regional loss, after the election completes.",
+    "safe": {
+      "label": "E6",
+      "commits": [
+        {
+          "operationId": "e2",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-west",
+          "atMs": 35000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "e2",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 35000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E6",
+      "commits": [
+        {
+          "operationId": "e2",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-west",
+          "atMs": 35000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "e2",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 35000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E7-both-sides-same-operation": {
+    "question": "One operation attempted on both sides of a partition at once.",
+    "safe": {
+      "label": "E7",
+      "commits": [
+        {
+          "operationId": "b1",
+          "outcome": "NO_QUORUM",
+          "acks": [
+            "east-a",
+            "east-b"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25000
+        },
+        {
+          "operationId": "b1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25500
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "b1",
+          "decidedIn": "us-east",
+          "outcome": "SAFE_MODE",
+          "fromLocalState": false,
+          "atMs": 25000
+        },
+        {
+          "operationId": "b1",
+          "decidedIn": "us-west",
+          "outcome": "SAFE_MODE",
+          "fromLocalState": false,
+          "atMs": 25500
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 2,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E7",
+      "commits": [
+        {
+          "operationId": "b1",
+          "outcome": "NO_QUORUM",
+          "acks": [
+            "east-a",
+            "east-b"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25000
+        },
+        {
+          "operationId": "b1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25500
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "b1",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": true,
+          "atMs": 25000
+        },
+        {
+          "operationId": "b1",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": true,
+          "atMs": 25500
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 2,
+      "unconfirmedFulfilments": 2,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  },
+  "E8-drain-and-restore": {
+    "question": "Traffic drains to the surviving region and comes back after recovery.",
+    "safe": {
+      "label": "E8",
+      "commits": [
+        {
+          "operationId": "r1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 10000
+        },
+        {
+          "operationId": "r2",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25000
+        },
+        {
+          "operationId": "r3",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-west",
+          "atMs": 35000
+        },
+        {
+          "operationId": "r4",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 50000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "r1",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 10000
+        },
+        {
+          "operationId": "r2",
+          "decidedIn": "us-west",
+          "outcome": "SAFE_MODE",
+          "fromLocalState": false,
+          "atMs": 25000
+        },
+        {
+          "operationId": "r3",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 35000
+        },
+        {
+          "operationId": "r4",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 50000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 1,
+      "sideEffectsWithoutCommit": 0,
+      "unconfirmedFulfilments": 0,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    },
+    "unsafe": {
+      "label": "E8",
+      "commits": [
+        {
+          "operationId": "r1",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 10000
+        },
+        {
+          "operationId": "r2",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 25000
+        },
+        {
+          "operationId": "r3",
+          "outcome": "COMMITTED",
+          "acks": [
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-west",
+          "atMs": 35000
+        },
+        {
+          "operationId": "r4",
+          "outcome": "COMMITTED",
+          "acks": [
+            "east-a",
+            "east-b",
+            "west-a",
+            "west-b",
+            "witness-a"
+          ],
+          "leaderRegion": "us-east",
+          "atMs": 50000
+        }
+      ],
+      "decisions": [
+        {
+          "operationId": "r1",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 10000
+        },
+        {
+          "operationId": "r2",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": true,
+          "atMs": 25000
+        },
+        {
+          "operationId": "r3",
+          "decidedIn": "us-west",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 35000
+        },
+        {
+          "operationId": "r4",
+          "decidedIn": "us-east",
+          "outcome": "FULFILLED",
+          "fromLocalState": false,
+          "atMs": 50000
+        }
+      ],
+      "unbackedFulfilments": [],
+      "doubleCommits": [],
+      "safeModeCount": 0,
+      "sideEffectsWithoutCommit": 1,
+      "unconfirmedFulfilments": 1,
+      "leaderRegionOverTime": [
+        {
+          "atMs": 0,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 1500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 2500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 3500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 4500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 5500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 6500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 7500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 8500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 9500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 10500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 11500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 12500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 13500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 14500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 15500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 16500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 17500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 18500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 19500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 20500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 21500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 22500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 23500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 24500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 25500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 26500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 27500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 28500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 29500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 30000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 30500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 31500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 32500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 33500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 34500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 35500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 36500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 37500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 38500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39000,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 39500,
+          "leader": "us-west"
+        },
+        {
+          "atMs": 40000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 40500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 41500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 42500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 43500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 44500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 45500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 46500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 47500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 48500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 49500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 50500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 51500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 52500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 53500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 54500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 55500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 56500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 57500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 58500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59000,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 59500,
+          "leader": "us-east"
+        },
+        {
+          "atMs": 60000,
+          "leader": "us-east"
+        }
+      ]
+    }
+  }
+}

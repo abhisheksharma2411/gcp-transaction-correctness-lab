@@ -1,0 +1,16 @@
+{
+  "name": "regional-authority-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Regional write authority under partition and regional loss. Companion lab for Article 3.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/quorum.test.ts tests/invariants.test.ts tests/negative-control.test.ts",
+    "report": "node scripts/experiments.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}
