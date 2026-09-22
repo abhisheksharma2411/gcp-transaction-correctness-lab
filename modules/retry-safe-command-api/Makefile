@@ -54,14 +54,25 @@ secret-scan:
 	@echo "== secret scan =="
 	@$(PY) scripts/secret-scan.py
 
+# `terraform init` contacts registry.terraform.io to resolve providers, even
+# when a provider is already cached, and both .terraform/ and the lock file are
+# gitignored. So on a clean clone this step needs the network -- which would
+# make `make verify` fail offline and quietly break the claim that this lab
+# runs with no external dependencies.
+#
+# Formatting is checked unconditionally because it needs nothing. Provider
+# resolution and validation are attempted and reported as SKIPPED when the
+# registry cannot be reached, following the same pattern as emulator-test.
 tf-check:
 	@echo "== terraform =="
-	@if command -v terraform >/dev/null 2>&1; then \
-		terraform -chdir=infra fmt -check && \
-		terraform -chdir=infra init -backend=false -input=false >/dev/null && \
+	@if ! command -v terraform >/dev/null 2>&1; then \
+		echo "terraform: SKIPPED (terraform not installed)"; \
+	elif ! terraform -chdir=infra fmt -check; then \
+		echo "terraform: FAIL (formatting)"; exit 1; \
+	elif terraform -chdir=infra init -backend=false -input=false >/dev/null 2>&1; then \
 		terraform -chdir=infra validate; \
 	else \
-		echo "terraform: SKIPPED (terraform not installed)"; \
+		echo "terraform: SKIPPED (provider registry unreachable; fmt checked, validate needs network)"; \
 	fi
 
 emulator-up:
