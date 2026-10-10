@@ -1,0 +1,17 @@
+{
+  "name": "double-entry-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An immutable double-entry ledger and an invariant checker that rebuilds balances from postings and compares them with a projection. Companion lab for Article 14.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/money.test.ts tests/journal.test.ts tests/ledger.test.ts tests/spanner.test.ts tests/projection.test.ts tests/invariants.test.ts tests/mutations.test.ts",
+    "report": "node scripts/report.ts",
+    "trace": "node scripts/trace.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

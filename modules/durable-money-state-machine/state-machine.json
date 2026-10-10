@@ -1,0 +1,363 @@
+{
+  "generatedFrom": "src/spec.ts",
+  "specs": [
+    {
+      "version": 1,
+      "initial": "DRAFT",
+      "states": [
+        "DRAFT",
+        "AUTHORIZED",
+        "SUBMITTED",
+        "RECONCILING",
+        "SETTLED",
+        "DECLINED",
+        "CANCELLED"
+      ],
+      "terminal": [
+        "SETTLED",
+        "DECLINED",
+        "CANCELLED"
+      ],
+      "autonomous": [
+        "authorize",
+        "submit",
+        "lookup_settled",
+        "lookup_declined",
+        "lookup_indeterminate"
+      ],
+      "waits": {
+        "SUBMITTED": {
+          "owner": "payment-provider",
+          "deadlineMs": 21600000,
+          "mechanism": "timer",
+          "escalatesTo": "RECONCILING",
+          "note": "Unchanged in version 2."
+        }
+      },
+      "transitions": [
+        {
+          "from": "DRAFT",
+          "trigger": "authorize",
+          "to": "AUTHORIZED",
+          "reasonCode": "AUTO_APPROVED",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Version 1 approved every amount. This is the defect version 2 fixes."
+        },
+        {
+          "from": "DRAFT",
+          "trigger": "cancel",
+          "to": "CANCELLED",
+          "reasonCode": "CANCELLED_BEFORE_AUTHORIZATION",
+          "guards": [],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "AUTHORIZED",
+          "trigger": "submit",
+          "to": "SUBMITTED",
+          "reasonCode": "SUBMITTED_TO_PROVIDER",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "AUTHORIZED",
+          "trigger": "cancel",
+          "to": "CANCELLED",
+          "reasonCode": "CANCELLED_BEFORE_SUBMISSION",
+          "guards": [],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "SUBMITTED",
+          "trigger": "callback_settled",
+          "to": "SETTLED",
+          "reasonCode": "PROVIDER_CONFIRMED_SETTLEMENT",
+          "guards": [
+            "actor-is-provider",
+            "callback-token-matches"
+          ],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "SUBMITTED",
+          "trigger": "callback_declined",
+          "to": "DECLINED",
+          "reasonCode": "PROVIDER_DECLINED",
+          "guards": [
+            "actor-is-provider",
+            "callback-token-matches"
+          ],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "SUBMITTED",
+          "trigger": "timer_expired",
+          "to": "RECONCILING",
+          "reasonCode": "CALLBACK_DEADLINE_PASSED",
+          "guards": [],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "lookup_settled",
+          "to": "SETTLED",
+          "reasonCode": "RESOLVED_SETTLED_BY_LOOKUP",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "lookup_declined",
+          "to": "DECLINED",
+          "reasonCode": "RESOLVED_DECLINED_BY_LOOKUP",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Unchanged in version 2."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "lookup_indeterminate",
+          "to": "DECLINED",
+          "reasonCode": "LOOKUP_INDETERMINATE_TREATED_AS_DECLINE",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Version 1 guessed. Recording a guess as a terminal fact is what version 2 stops doing."
+        }
+      ],
+      "guards": [
+        "actor-is-operator",
+        "actor-is-provider",
+        "actor-is-service",
+        "amount-above-auto-limit",
+        "amount-within-auto-limit",
+        "callback-token-matches",
+        "reviewer-is-not-initiator",
+        "within-reviewer-limit"
+      ]
+    },
+    {
+      "version": 2,
+      "initial": "DRAFT",
+      "states": [
+        "DRAFT",
+        "AUTHORIZED",
+        "SUBMITTED",
+        "RECONCILING",
+        "MANUAL_REVIEW",
+        "SETTLED",
+        "DECLINED",
+        "CANCELLED"
+      ],
+      "terminal": [
+        "SETTLED",
+        "DECLINED",
+        "CANCELLED"
+      ],
+      "autonomous": [
+        "authorize",
+        "submit",
+        "lookup_settled",
+        "lookup_declined",
+        "lookup_indeterminate"
+      ],
+      "waits": {
+        "SUBMITTED": {
+          "owner": "payment-provider",
+          "deadlineMs": 21600000,
+          "mechanism": "timer",
+          "escalatesTo": "RECONCILING",
+          "note": "The provider owns this wait. Nothing we do shortens it, so the only question is what happens when it ends."
+        },
+        "MANUAL_REVIEW": {
+          "owner": "payouts-operations",
+          "deadlineMs": 86400000,
+          "mechanism": "sweep",
+          "note": "A human owns this wait. No timer moves it, which is precisely why it needs a deadline somebody is shown."
+        }
+      },
+      "transitions": [
+        {
+          "from": "DRAFT",
+          "trigger": "authorize",
+          "to": "AUTHORIZED",
+          "reasonCode": "AUTO_APPROVED_WITHIN_LIMIT",
+          "guards": [
+            "actor-is-service",
+            "amount-within-auto-limit"
+          ],
+          "note": "Small enough to approve without a human. No external effect yet."
+        },
+        {
+          "from": "DRAFT",
+          "trigger": "authorize",
+          "to": "MANUAL_REVIEW",
+          "reasonCode": "ROUTED_TO_REVIEW_OVER_LIMIT",
+          "guards": [
+            "actor-is-service",
+            "amount-above-auto-limit"
+          ],
+          "note": "Over the limit. Review is a route to approval, never an exemption from it."
+        },
+        {
+          "from": "DRAFT",
+          "trigger": "cancel",
+          "to": "CANCELLED",
+          "reasonCode": "CANCELLED_BEFORE_AUTHORIZATION",
+          "guards": [],
+          "note": "Nothing has been promised to anyone, so cancellation is free."
+        },
+        {
+          "from": "AUTHORIZED",
+          "trigger": "submit",
+          "to": "SUBMITTED",
+          "reasonCode": "SUBMITTED_TO_PROVIDER",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "The only transition that creates an external monetary effect."
+        },
+        {
+          "from": "AUTHORIZED",
+          "trigger": "cancel",
+          "to": "CANCELLED",
+          "reasonCode": "CANCELLED_BEFORE_SUBMISSION",
+          "guards": [],
+          "note": "Still free: authorization is an internal fact."
+        },
+        {
+          "from": "SUBMITTED",
+          "trigger": "callback_settled",
+          "to": "SETTLED",
+          "reasonCode": "PROVIDER_CONFIRMED_SETTLEMENT",
+          "guards": [
+            "actor-is-provider",
+            "callback-token-matches"
+          ],
+          "note": "The token is what makes this callback this payout's callback."
+        },
+        {
+          "from": "SUBMITTED",
+          "trigger": "callback_declined",
+          "to": "DECLINED",
+          "reasonCode": "PROVIDER_DECLINED",
+          "guards": [
+            "actor-is-provider",
+            "callback-token-matches"
+          ],
+          "note": "A decline is an answer, and an answer is a success for the state machine."
+        },
+        {
+          "from": "SUBMITTED",
+          "trigger": "timer_expired",
+          "to": "RECONCILING",
+          "reasonCode": "CALLBACK_DEADLINE_PASSED",
+          "guards": [],
+          "note": "The deadline passing is a fact about our waiting, not a fact about the money."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "lookup_settled",
+          "to": "SETTLED",
+          "reasonCode": "RESOLVED_SETTLED_BY_LOOKUP",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "The provider knew all along; the callback was what went missing."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "lookup_declined",
+          "to": "DECLINED",
+          "reasonCode": "RESOLVED_DECLINED_BY_LOOKUP",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Same shape, opposite answer."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "lookup_indeterminate",
+          "to": "MANUAL_REVIEW",
+          "reasonCode": "LOOKUP_INDETERMINATE",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "Nobody can answer automatically, so the process acquires a human owner rather than a guess."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "callback_settled",
+          "to": "SETTLED",
+          "reasonCode": "LATE_CALLBACK_ACCEPTED",
+          "guards": [
+            "actor-is-provider",
+            "callback-token-matches"
+          ],
+          "note": "A callback that arrives after the deadline is late, not invalid."
+        },
+        {
+          "from": "RECONCILING",
+          "trigger": "callback_declined",
+          "to": "DECLINED",
+          "reasonCode": "LATE_CALLBACK_ACCEPTED",
+          "guards": [
+            "actor-is-provider",
+            "callback-token-matches"
+          ],
+          "note": "The same allowance for the opposite answer."
+        },
+        {
+          "from": "MANUAL_REVIEW",
+          "trigger": "review_approve",
+          "to": "AUTHORIZED",
+          "reasonCode": "REVIEW_APPROVED",
+          "guards": [
+            "actor-is-operator",
+            "reviewer-is-not-initiator",
+            "within-reviewer-limit"
+          ],
+          "note": "Back to AUTHORIZED, never straight to a terminal state. Review grants permission to proceed, not an outcome."
+        },
+        {
+          "from": "MANUAL_REVIEW",
+          "trigger": "review_reject",
+          "to": "CANCELLED",
+          "reasonCode": "REVIEW_REJECTED",
+          "guards": [
+            "actor-is-operator",
+            "reviewer-is-not-initiator"
+          ],
+          "note": "Rejection needs the same separation of duty as approval and none of the amount authority."
+        },
+        {
+          "from": "MANUAL_REVIEW",
+          "trigger": "cancel",
+          "to": "CANCELLED",
+          "reasonCode": "CANCELLED_IN_REVIEW",
+          "guards": [
+            "actor-is-service"
+          ],
+          "note": "The requester may still withdraw a payout that has not been submitted."
+        }
+      ],
+      "guards": [
+        "actor-is-operator",
+        "actor-is-provider",
+        "actor-is-service",
+        "amount-above-auto-limit",
+        "amount-within-auto-limit",
+        "callback-token-matches",
+        "reviewer-is-not-initiator",
+        "within-reviewer-limit"
+      ]
+    }
+  ]
+}

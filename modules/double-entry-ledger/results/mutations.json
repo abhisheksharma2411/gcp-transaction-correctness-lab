@@ -1,0 +1,97 @@
+{
+  "mutations": [
+    {
+      "id": "M1",
+      "name": "no balance check",
+      "removes": "journal validation's debits-equal-credits rule",
+      "expected": [
+        "INV-1",
+        "INV-8"
+      ],
+      "reddened": [
+        "INV-1",
+        "INV-8"
+      ],
+      "agrees": true,
+      "verdict": "VIOLATED"
+    },
+    {
+      "id": "M2",
+      "name": "projection without an inbox",
+      "removes": "the projection's record of which postings it already applied",
+      "expected": [
+        "INV-3"
+      ],
+      "reddened": [
+        "INV-3"
+      ],
+      "agrees": true,
+      "verdict": "VIOLATED"
+    },
+    {
+      "id": "M3",
+      "name": "posting ids minted in the transaction body",
+      "removes": "deterministic identity across a retried read-write transaction",
+      "expected": [
+        "INV-4"
+      ],
+      "reddened": [
+        "INV-4"
+      ],
+      "agrees": true,
+      "verdict": "VIOLATED"
+    },
+    {
+      "id": "M4",
+      "name": "money as a double",
+      "removes": "exact integer minor units",
+      "expected": [
+        "INV-1",
+        "INV-8"
+      ],
+      "reddened": [
+        "INV-1",
+        "INV-8"
+      ],
+      "agrees": true,
+      "verdict": "VIOLATED"
+    },
+    {
+      "id": "M5",
+      "name": "DELETE left on the writer role",
+      "removes": "the privilege boundary that makes a posting immutable",
+      "expected": [
+        "INV-3",
+        "INV-4",
+        "INV-8"
+      ],
+      "reddened": [
+        "INV-3",
+        "INV-4",
+        "INV-8"
+      ],
+      "agrees": true,
+      "verdict": "VIOLATED"
+    },
+    {
+      "id": "M6",
+      "name": "a balanced edit of an accepted journal",
+      "removes": "nothing a balance check can see — this is what the chain is for",
+      "expected": [
+        "INV-2"
+      ],
+      "reddened": [
+        "INV-2"
+      ],
+      "agrees": true,
+      "verdict": "VIOLATED"
+    }
+  ],
+  "control": {
+    "checked": 9,
+    "holds": 0,
+    "violated": 0,
+    "vacuous": 9,
+    "verdict": "INCONCLUSIVE"
+  }
+}

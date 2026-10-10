@@ -1,0 +1,507 @@
+{
+  "generatedFrom": "scripts/report.ts",
+  "evaluatedAt": "2026-01-05T00:00:00.000Z",
+  "note": "Deterministic. No cloud project, no credentials, no network.",
+  "specVersion": 2,
+  "verification": [
+    {
+      "check": "every-state-reachable",
+      "ok": true,
+      "detail": "8 states reachable from DRAFT"
+    },
+    {
+      "check": "every-state-can-terminate",
+      "ok": true,
+      "detail": "every state has a path to a terminal state"
+    },
+    {
+      "check": "terminal-states-are-sinks",
+      "ok": true,
+      "detail": "3 terminal states have no outgoing transitions"
+    },
+    {
+      "check": "no-duplicate-rows",
+      "ok": true,
+      "detail": "16 rows, all distinct"
+    },
+    {
+      "check": "guards-exist",
+      "ok": true,
+      "detail": "8 guards defined"
+    },
+    {
+      "check": "every-waiting-state-has-an-owner-and-deadline",
+      "ok": true,
+      "detail": "every waiting state names an owner and a deadline"
+    },
+    {
+      "check": "declared-waits-match-the-table",
+      "ok": true,
+      "detail": "every timer deadline has a row and every row has a deadline"
+    },
+    {
+      "check": "reason-codes-unique-per-destination",
+      "ok": true,
+      "detail": "15 reason codes, none spanning two source states"
+    }
+  ],
+  "transitionCoverage": {
+    "permitted": 16,
+    "exercised": 16,
+    "uncovered": []
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "title": "the ordinary life of a payout",
+      "covers": "every permitted transition; the happy path",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {
+        "token": "cbt-po-001-submit-po-001"
+      }
+    },
+    {
+      "id": "S02",
+      "title": "the provider declines, and that is an answer",
+      "covers": "decline path; a terminal state reached without an error",
+      "finalState": "DECLINED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S03",
+      "title": "a large payout is routed to a human",
+      "covers": "manual-review transition; guards as data",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S04",
+      "title": "a reviewer cannot approve above their own limit",
+      "covers": "manual review cannot bypass a financial guard",
+      "finalState": "MANUAL_REVIEW",
+      "providerSubmissions": 0,
+      "refusals": [
+        "GUARD_FAILED",
+        "GUARD_FAILED"
+      ],
+      "extra": {}
+    },
+    {
+      "id": "S05",
+      "title": "review approval returns to AUTHORIZED, never to a terminal state",
+      "covers": "manual review cannot bypass a financial guard; review grants permission, not an outcome",
+      "finalState": "AUTHORIZED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {
+        "stateAfterApproval": "AUTHORIZED"
+      }
+    },
+    {
+      "id": "S06",
+      "title": "a payout in flight cannot be cancelled",
+      "covers": "representative forbidden transitions; cancellation racing with completion",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [
+        "NO_SUCH_TRANSITION"
+      ],
+      "extra": {}
+    },
+    {
+      "id": "S07",
+      "title": "a duplicate command is refused by the version check",
+      "covers": "duplicate command; concurrent commands against one entity",
+      "finalState": "AUTHORIZED",
+      "providerSubmissions": 0,
+      "refusals": [
+        "VERSION_CONFLICT"
+      ],
+      "extra": {
+        "versionAfterFirst": 1
+      }
+    },
+    {
+      "id": "S08",
+      "title": "two operators approve the same payout at the same instant",
+      "covers": "concurrent commands against one entity",
+      "finalState": "AUTHORIZED",
+      "providerSubmissions": 0,
+      "refusals": [
+        "VERSION_CONFLICT"
+      ],
+      "extra": {
+        "approvals": 1
+      }
+    },
+    {
+      "id": "S09",
+      "title": "a duplicate callback is refused by the token",
+      "covers": "duplicate callback",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [
+        "TERMINAL",
+        "TERMINAL"
+      ],
+      "extra": {}
+    },
+    {
+      "id": "S10",
+      "title": "a callback for a different submission is not this payout's callback",
+      "covers": "callback correlation; out-of-order callback",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [
+        "CALLBACK_UNCORRELATED"
+      ],
+      "extra": {
+        "token": "cbt-po-010-submit-po-010"
+      }
+    },
+    {
+      "id": "S11",
+      "title": "the callback never arrives and the deadline fires",
+      "covers": "missing callback; timeout; reconciliation",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {
+        "afterTimer": "RECONCILING"
+      }
+    },
+    {
+      "id": "S12",
+      "title": "the timer fires twice",
+      "covers": "timer fires twice",
+      "finalState": "RECONCILING",
+      "providerSubmissions": 1,
+      "refusals": [
+        "NO_SUCH_TRANSITION"
+      ],
+      "extra": {
+        "reconcilings": 1
+      }
+    },
+    {
+      "id": "S13",
+      "title": "the callback arrives after the deadline has already fired",
+      "covers": "callback arrives after timeout",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S14",
+      "title": "the provider has no record and nobody guesses",
+      "covers": "unknown outcome becomes a human's problem rather than a decision",
+      "finalState": "MANUAL_REVIEW",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {
+        "submissions": 0
+      }
+    },
+    {
+      "id": "S15",
+      "title": "crash before the transition commits",
+      "covers": "crash before transition commit",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {
+        "afterCrash": "AUTHORIZED"
+      }
+    },
+    {
+      "id": "S16",
+      "title": "crash after the transition commits, before the task is acknowledged",
+      "covers": "crash after transition commit but before task acknowledgment",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [
+        "NO_SUCH_TRANSITION"
+      ],
+      "extra": {
+        "afterCrash": "SUBMITTED"
+      }
+    },
+    {
+      "id": "S17",
+      "title": "a worker dies holding the entity and another takes it over",
+      "covers": "the indefinitely stuck in-progress record; lease, owner, timeout",
+      "finalState": "SUBMITTED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {
+        "stuckBefore": 0,
+        "stuckAfter": 1,
+        "stuckReason": "LEASE_EXPIRED",
+        "outcome": "RECOVERED",
+        "rearmed": 1
+      }
+    },
+    {
+      "id": "S18",
+      "title": "a second worker cannot take an entity whose lease is live",
+      "covers": "lease ownership; concurrent workers",
+      "finalState": "SUBMITTED",
+      "providerSubmissions": 1,
+      "refusals": [
+        "LEASE_NOT_HELD"
+      ],
+      "extra": {
+        "refusedWith": "LEASE_NOT_HELD"
+      }
+    },
+    {
+      "id": "S19",
+      "title": "a terminal payout does not reopen",
+      "covers": "terminal state cannot silently reopen",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [
+        "TERMINAL",
+        "TERMINAL",
+        "TERMINAL",
+        "TERMINAL"
+      ],
+      "extra": {}
+    },
+    {
+      "id": "S20",
+      "title": "a version 1 payout in flight keeps running under version 1",
+      "covers": "migration from state-machine version 1 to version 2",
+      "finalState": "SETTLED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {
+        "migration": "PINNED",
+        "why": "in flight in SUBMITTED; finishes under version 1",
+        "ranUnder": 1
+      }
+    },
+    {
+      "id": "S21",
+      "title": "a version 1 payout that version 2 would have reviewed is not relabelled",
+      "covers": "migration from state-machine version 1 to version 2; refusing to rewrite history",
+      "finalState": "AUTHORIZED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {
+        "migration": "BLOCKED",
+        "why": "version 1 auto-approved an amount version 2 would have sent to review; migrating would claim a review that never happened",
+        "stillUnder": 1
+      }
+    },
+    {
+      "id": "S22",
+      "title": "a review queue nobody has looked at",
+      "covers": "every waiting condition has an owner and a deadline",
+      "finalState": "MANUAL_REVIEW",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {
+        "quiet": 0,
+        "overdue": 1,
+        "reason": "WAITING_TOO_LONG",
+        "owner": "payouts-operations"
+      }
+    },
+    {
+      "id": "S23",
+      "title": "cancelled before authorization",
+      "covers": "every permitted transition; cancellation while nothing is promised",
+      "finalState": "CANCELLED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S24",
+      "title": "cancelled after authorization, before submission",
+      "covers": "every permitted transition; the last moment cancellation is free",
+      "finalState": "CANCELLED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S25",
+      "title": "a reviewer rejects",
+      "covers": "every permitted transition; manual review as a terminal route",
+      "finalState": "CANCELLED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S26",
+      "title": "the requester withdraws a payout sitting in review",
+      "covers": "every permitted transition; cancellation from a waiting state",
+      "finalState": "CANCELLED",
+      "providerSubmissions": 0,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S27",
+      "title": "the lookup finds a decline",
+      "covers": "every permitted transition; reconciliation resolving to a refusal",
+      "finalState": "DECLINED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {}
+    },
+    {
+      "id": "S28",
+      "title": "a declining callback arrives after the deadline",
+      "covers": "every permitted transition; callback arrives after timeout",
+      "finalState": "DECLINED",
+      "providerSubmissions": 1,
+      "refusals": [],
+      "extra": {}
+    }
+  ],
+  "refusalTally": {
+    "GUARD_FAILED": 2,
+    "NO_SUCH_TRANSITION": 3,
+    "VERSION_CONFLICT": 2,
+    "TERMINAL": 6,
+    "CALLBACK_UNCORRELATED": 1,
+    "LEASE_NOT_HELD": 1
+  },
+  "universalInvariantFailures": [],
+  "crashMatrix": [
+    {
+      "point": "none",
+      "stateAfterCrash": "SUBMITTED",
+      "recovered": "RECOVERED",
+      "finalState": "SETTLED",
+      "submissions": 1,
+      "timersPending": 0
+    },
+    {
+      "point": "before-commit",
+      "stateAfterCrash": "AUTHORIZED",
+      "recovered": "RECOVERED",
+      "finalState": "SETTLED",
+      "submissions": 1,
+      "timersPending": 0
+    },
+    {
+      "point": "after-commit-before-actions",
+      "stateAfterCrash": "SUBMITTED",
+      "recovered": "RECOVERED",
+      "finalState": "MANUAL_REVIEW",
+      "submissions": 0,
+      "timersPending": 0
+    },
+    {
+      "point": "after-actions-before-ack",
+      "stateAfterCrash": "SUBMITTED",
+      "recovered": "RECOVERED",
+      "finalState": "SETTLED",
+      "submissions": 1,
+      "timersPending": 0
+    }
+  ],
+  "answerLocation": {
+    "retentionDays": 90,
+    "database": {
+      "duringRun": "SUBMITTED",
+      "afterRetention": "SUBMITTED"
+    },
+    "engine": {
+      "duringRun": "SUBMITTED",
+      "afterRetention": null
+    },
+    "executionsExpired": 1
+  },
+  "negativeControls": {
+    "runtime": [
+      {
+        "removed": "no-terminal-check",
+        "detected": true,
+        "evidence": [
+          "refusals lost: TERMINAL"
+        ]
+      },
+      {
+        "removed": "no-version-check",
+        "detected": true,
+        "evidence": [
+          "refusals lost: VERSION_CONFLICT"
+        ]
+      },
+      {
+        "removed": "no-lease-check",
+        "detected": true,
+        "evidence": [
+          "refusals lost: LEASE_NOT_HELD"
+        ]
+      },
+      {
+        "removed": "no-guards",
+        "detected": true,
+        "evidence": [
+          "history length 5 -> 4",
+          "refusals lost: GUARD_FAILED, CALLBACK_UNCORRELATED"
+        ]
+      },
+      {
+        "removed": "no-callback-correlation",
+        "detected": true,
+        "evidence": [
+          "refusals lost: CALLBACK_UNCORRELATED"
+        ]
+      },
+      {
+        "removed": "history-not-appended",
+        "detected": true,
+        "evidence": [
+          "history length 5 -> 1"
+        ]
+      }
+    ],
+    "spec": [
+      {
+        "removed": "add-unreachable-state",
+        "checksTurnedRed": [
+          "every-state-reachable",
+          "every-state-can-terminate",
+          "every-waiting-state-has-an-owner-and-deadline"
+        ],
+        "detected": true
+      },
+      {
+        "removed": "add-exit-from-terminal",
+        "checksTurnedRed": [
+          "terminal-states-are-sinks"
+        ],
+        "detected": true
+      },
+      {
+        "removed": "drop-the-review-deadline",
+        "checksTurnedRed": [
+          "every-waiting-state-has-an-owner-and-deadline"
+        ],
+        "detected": true
+      },
+      {
+        "removed": "escalate-to-nowhere",
+        "checksTurnedRed": [
+          "declared-waits-match-the-table"
+        ],
+        "detected": true
+      }
+    ]
+  }
+}

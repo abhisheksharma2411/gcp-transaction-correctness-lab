@@ -1,0 +1,615 @@
+{
+  "generatedFrom": "scripts/report.ts",
+  "evaluatedAt": "2026-01-05T00:00:00.000Z",
+  "note": "Deterministic. No cloud project, no credentials, no network. Wall-clock timings are excluded on purpose.",
+  "correctionWindowMs": 432000000,
+  "streamSpec": {
+    "transactions": 400,
+    "seed": 20260105,
+    "spanMs": 432000000,
+    "settleDelayMs": 93600000,
+    "jitterMs": 5400000,
+    "duplicateEvery": 7,
+    "restateEvery": 11,
+    "correctionEvery": 13,
+    "reversalEvery": 23,
+    "feeAnomalyEvery": 29,
+    "missingSettlementEvery": 17,
+    "contradictionEvery": 31
+  },
+  "planted": {
+    "transactions": 400,
+    "duplicateDeliveries": 58,
+    "restatedDeliveries": 33,
+    "corrections": 28,
+    "reversals": 18,
+    "feeAnomalies": 13,
+    "missingSettlements": 22,
+    "contradictions": 13
+  },
+  "corpus": [
+    {
+      "id": "R01",
+      "title": "one transaction, captured and then settled",
+      "covers": "canonical event schema; normalized ledger; balanced entries",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "8dcc113f30d5fa2bd371b6cc"
+    },
+    {
+      "id": "R02",
+      "title": "the same delivery arrives three times",
+      "covers": "same event delivered multiple times; duplicate source events",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "22369c1b8f6e4266eb6eb4d2"
+    },
+    {
+      "id": "R03",
+      "title": "one fact, two delivery ids",
+      "covers": "publish-side duplicates that carry different message IDs",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "f44c637f9e399d5ae9a383bf"
+    },
+    {
+      "id": "R04",
+      "title": "the same facts, serialised with the keys in a different order",
+      "covers": "canonical identity; two sources agreeing with different encodings",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "744fdb5834a0861ad3737de7"
+    },
+    {
+      "id": "R05",
+      "title": "two sources, two references, one transaction",
+      "covers": "two sources report the same business transaction differently",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "2d71b357be5917215626ae69"
+    },
+    {
+      "id": "R06",
+      "title": "two sources disagree about the amount",
+      "covers": "contradictory evidence is not silently resolved",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [
+        "CONTRADICTORY_SOURCES"
+      ],
+      "digest": "c34b2d144428f2d6dfbfaf0c"
+    },
+    {
+      "id": "R07",
+      "title": "settlement arrives late, inside the pipeline's window",
+      "covers": "late settlement records",
+      "passed": true,
+      "entries": 3,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "ed5ffafaf08354c91979d4bc"
+    },
+    {
+      "id": "R08",
+      "title": "settlement arrives after the pipeline's window and is dropped",
+      "covers": "late data beyond allowed lateness; missing settlement",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [
+        "MISSING_SETTLEMENT",
+        "MISSING_SETTLEMENT"
+      ],
+      "digest": "aa754f2313cf46d24d0b8f15"
+    },
+    {
+      "id": "R09",
+      "title": "replay while the de-duplication record is still live",
+      "covers": "deterministic replay; replay after partial failure",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "a33a3ad0220fb164d63fc694"
+    },
+    {
+      "id": "R10",
+      "title": "every derived store is rebuilt from raw evidence",
+      "covers": "accepted financial effect count does not grow silently on replay",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "02eb27d0feebff9fb201197e"
+    },
+    {
+      "id": "R11",
+      "title": "a correction arrives before the position goes final",
+      "covers": "corrections; traceable adjustment",
+      "passed": true,
+      "entries": 3,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "345f170fec29f5cb19080950"
+    },
+    {
+      "id": "R12",
+      "title": "a correction arrives after the position went final",
+      "covers": "correction after an earlier accepted record; business finality",
+      "passed": true,
+      "entries": 3,
+      "balanced": true,
+      "exceptions": [
+        "CORRECTION_AFTER_FINALITY"
+      ],
+      "digest": "32ad1c2897d9cf2d5fb2e098"
+    },
+    {
+      "id": "R13",
+      "title": "a correction whose key fields do not match the original",
+      "covers": "invalid correction refused rather than applied",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [
+        "INVALID_CORRECTION"
+      ],
+      "digest": "2418f643ce9f9a08240b53ed"
+    },
+    {
+      "id": "R14",
+      "title": "the processor kept more than the contract explains",
+      "covers": "fee or net-settlement difference",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [
+        "FEE_UNEXPLAINED"
+      ],
+      "digest": "bc9a19a97598904167480fb4"
+    },
+    {
+      "id": "R15",
+      "title": "one settlement record covering two transactions",
+      "covers": "grouping differences between a source and the business",
+      "passed": true,
+      "entries": 3,
+      "balanced": true,
+      "exceptions": [
+        "UNALLOCATED_GROUPING"
+      ],
+      "digest": "7be76dfda34f3952ccceb949"
+    },
+    {
+      "id": "R16",
+      "title": "a reversal after a capture",
+      "covers": "reversals",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "acfea23ecbb0b47166666146"
+    },
+    {
+      "id": "R17",
+      "title": "the settlement arrives before the capture",
+      "covers": "out-of-order arrival; no dependence on delivery order",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [],
+      "digest": "2b30d9e47becd942e5a86a12"
+    },
+    {
+      "id": "R18",
+      "title": "the same delivery id arrives carrying a different body",
+      "covers": "immutable raw input",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [
+        "RAW_IMMUTABLE_CONFLICT"
+      ],
+      "digest": "04b10a9aca57262712238043"
+    },
+    {
+      "id": "R19",
+      "title": "a manual resolution, twice, both versions kept",
+      "covers": "manual resolution is versioned and auditable; exception queue",
+      "passed": true,
+      "entries": 2,
+      "balanced": true,
+      "exceptions": [
+        "MISSING_SETTLEMENT"
+      ],
+      "digest": "7ab9c38fdefb0ce7ebb7c3be"
+    },
+    {
+      "id": "R20",
+      "title": "a case does not go final merely because the window elapsed",
+      "covers": "finality requires coherent evidence, not just a deadline",
+      "passed": true,
+      "entries": 1,
+      "balanced": true,
+      "exceptions": [
+        "MISSING_SETTLEMENT"
+      ],
+      "digest": "b4afcd683e81c15e7a58230c"
+    },
+    {
+      "id": "R21",
+      "title": "a record that does not normalise",
+      "covers": "malformed evidence reaches the exception queue, not the ledger",
+      "passed": true,
+      "entries": 0,
+      "balanced": true,
+      "exceptions": [
+        "MALFORMED_RECORD"
+      ],
+      "digest": "1123312bc3bee62657a8ae32"
+    }
+  ],
+  "baseline": {
+    "allowedLatenessMs": 604800000,
+    "deliveries": 910,
+    "duplicateDeliveries": 58,
+    "statements": 819,
+    "duplicateStatements": 33,
+    "droppedLate": 0,
+    "entries": 806,
+    "computations": 852,
+    "balanced": true,
+    "digest": "3e0d263984a9a2d642937212",
+    "states": {
+      "EXCEPTION": 26,
+      "MATCHED": 352,
+      "UNMATCHED": 22
+    },
+    "exceptionReasons": {
+      "CONTRADICTORY_SOURCES": 13,
+      "FEE_UNEXPLAINED": 13,
+      "MISSING_SETTLEMENT": 22
+    },
+    "stoppedBy": {
+      "accepted": 806,
+      "engine": 13,
+      "raw-store": 58,
+      "statement-dedup": 33
+    }
+  },
+  "latenessSweep": [
+    {
+      "allowedLatenessMs": 3600000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 514,
+      "duplicateStatements": 20,
+      "droppedLate": 318,
+      "entries": 503,
+      "computations": 852,
+      "balanced": true,
+      "digest": "3c233ed4d3730cfd4d9c9bca",
+      "states": {
+        "EXCEPTION": 16,
+        "MATCHED": 156,
+        "UNMATCHED": 164
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 11,
+        "FEE_UNEXPLAINED": 7,
+        "MISSING_SETTLEMENT": 87
+      },
+      "stoppedBy": {
+        "accepted": 503,
+        "engine": 11,
+        "late-window": 318,
+        "raw-store": 58,
+        "statement-dedup": 20
+      }
+    },
+    {
+      "allowedLatenessMs": 21600000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 792,
+      "duplicateStatements": 33,
+      "droppedLate": 27,
+      "entries": 779,
+      "computations": 852,
+      "balanced": true,
+      "digest": "9f07b8f9ce453561ed4e7e0d",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 779,
+        "engine": 13,
+        "late-window": 27,
+        "raw-store": 58,
+        "statement-dedup": 33
+      }
+    },
+    {
+      "allowedLatenessMs": 86400000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 797,
+      "duplicateStatements": 33,
+      "droppedLate": 22,
+      "entries": 784,
+      "computations": 852,
+      "balanced": true,
+      "digest": "e1f4dd55d007cb32a574f019",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 784,
+        "engine": 13,
+        "late-window": 22,
+        "raw-store": 58,
+        "statement-dedup": 33
+      }
+    },
+    {
+      "allowedLatenessMs": 172800000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 802,
+      "duplicateStatements": 33,
+      "droppedLate": 17,
+      "entries": 789,
+      "computations": 852,
+      "balanced": true,
+      "digest": "39da274fa7105087837afa02",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 789,
+        "engine": 13,
+        "late-window": 17,
+        "raw-store": 58,
+        "statement-dedup": 33
+      }
+    },
+    {
+      "allowedLatenessMs": 432000000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 819,
+      "duplicateStatements": 33,
+      "droppedLate": 0,
+      "entries": 806,
+      "computations": 852,
+      "balanced": true,
+      "digest": "3e0d263984a9a2d642937212",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 806,
+        "engine": 13,
+        "raw-store": 58,
+        "statement-dedup": 33
+      }
+    },
+    {
+      "allowedLatenessMs": 604800000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 819,
+      "duplicateStatements": 33,
+      "droppedLate": 0,
+      "entries": 806,
+      "computations": 852,
+      "balanced": true,
+      "digest": "3e0d263984a9a2d642937212",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 806,
+        "engine": 13,
+        "raw-store": 58,
+        "statement-dedup": 33
+      }
+    }
+  ],
+  "recovery": {
+    "narrow": {
+      "allowedLatenessMs": 21600000,
+      "deliveries": 910,
+      "duplicateDeliveries": 58,
+      "statements": 792,
+      "duplicateStatements": 33,
+      "droppedLate": 27,
+      "entries": 779,
+      "computations": 852,
+      "balanced": true,
+      "digest": "9f07b8f9ce453561ed4e7e0d",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 779,
+        "engine": 13,
+        "late-window": 27,
+        "raw-store": 58,
+        "statement-dedup": 33
+      }
+    },
+    "recovered": {
+      "allowedLatenessMs": 604800000,
+      "deliveries": 852,
+      "duplicateDeliveries": 0,
+      "statements": 819,
+      "duplicateStatements": 33,
+      "droppedLate": 0,
+      "entries": 806,
+      "computations": 852,
+      "balanced": true,
+      "digest": "3e0d263984a9a2d642937212",
+      "states": {
+        "EXCEPTION": 26,
+        "MATCHED": 352,
+        "UNMATCHED": 22
+      },
+      "exceptionReasons": {
+        "CONTRADICTORY_SOURCES": 13,
+        "FEE_UNEXPLAINED": 13,
+        "MISSING_SETTLEMENT": 22
+      },
+      "stoppedBy": {
+        "accepted": 806,
+        "engine": 13,
+        "statement-dedup": 33
+      }
+    }
+  },
+  "replay": {
+    "before": {
+      "entries": 806,
+      "computations": 852,
+      "digest": "3e0d263984a9a2d642937212"
+    },
+    "after": {
+      "entries": 806,
+      "computations": 1704,
+      "digest": "3e0d263984a9a2d642937212"
+    }
+  },
+  "negativeControls": [
+    {
+      "removed": "noDeliveryDedup",
+      "casesTurnedRed": [
+        "R02"
+      ],
+      "localised": true
+    },
+    {
+      "removed": "noRawImmutability",
+      "casesTurnedRed": [
+        "R18"
+      ],
+      "localised": true
+    },
+    {
+      "removed": "noStatementDedup",
+      "casesTurnedRed": [
+        "R03",
+        "R04",
+        "R09"
+      ],
+      "localised": true
+    },
+    {
+      "removed": "naiveIdentity",
+      "casesTurnedRed": [
+        "R04"
+      ],
+      "localised": true
+    },
+    {
+      "removed": "noCorrelation",
+      "casesTurnedRed": [
+        "R05",
+        "R06"
+      ],
+      "localised": true
+    },
+    {
+      "removed": "noEntryDedup",
+      "casesTurnedRed": [
+        "R10"
+      ],
+      "localised": true
+    },
+    {
+      "removed": "noFinalityGate",
+      "casesTurnedRed": [
+        "R12"
+      ],
+      "localised": true
+    }
+  ],
+  "bluntControl": {
+    "removed": "postEverythingTwice",
+    "casesTurnedRed": [
+      "R01",
+      "R02",
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "R08",
+      "R09",
+      "R10",
+      "R11",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "R16",
+      "R17",
+      "R18",
+      "R19",
+      "R20"
+    ],
+    "rejected": true
+  }
+}

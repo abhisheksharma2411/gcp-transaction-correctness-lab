@@ -1,0 +1,18 @@
+{
+  "name": "durable-money-state-machine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An executable state-machine specification for one durable money-movement entity, with crash recovery, leases, durable timers, callback correlation, and generated documentation. Companion lab for Article 13.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/machine.test.ts tests/guards.test.ts tests/lease.test.ts tests/timers.test.ts tests/crash.test.ts tests/verify.test.ts tests/migrate.test.ts tests/drivers.test.ts tests/controls.test.ts",
+    "report": "node scripts/report.ts",
+    "generate": "node scripts/generate.ts",
+    "inspect": "node scripts/inspect.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

@@ -1,0 +1,86 @@
+{
+  "ledgerId": "ldg_platform_demo",
+  "asOf": "2026-03-31",
+  "invariants": [
+    {
+      "id": "INV-1",
+      "name": "journal balanced",
+      "covers": "a journal whose debits and credits differ was accepted",
+      "status": "HOLDS",
+      "population": 9,
+      "violations": []
+    },
+    {
+      "id": "INV-2",
+      "name": "posting log intact",
+      "covers": "a posting was altered or removed after it was written",
+      "status": "HOLDS",
+      "population": 9,
+      "violations": []
+    },
+    {
+      "id": "INV-3",
+      "name": "projection equals rebuild",
+      "covers": "the cached balance drifted from the postings that determine it",
+      "status": "HOLDS",
+      "population": 9,
+      "violations": []
+    },
+    {
+      "id": "INV-4",
+      "name": "no orphan postings",
+      "covers": "a journal and its postings were torn apart, by a partial write or a retention sweep",
+      "status": "HOLDS",
+      "population": 22,
+      "violations": []
+    },
+    {
+      "id": "INV-5",
+      "name": "reversal nets to zero",
+      "covers": "a correction that did not actually undo what it claimed to undo",
+      "status": "HOLDS",
+      "population": 1,
+      "violations": []
+    },
+    {
+      "id": "INV-6",
+      "name": "currency consistent",
+      "covers": "two currencies summed into one account balance",
+      "status": "HOLDS",
+      "population": 22,
+      "violations": []
+    },
+    {
+      "id": "INV-7",
+      "name": "period and time separation",
+      "covers": "a backdated entry that lost its recorded time, or landed in a closed period",
+      "status": "HOLDS",
+      "population": 9,
+      "violations": []
+    },
+    {
+      "id": "INV-8",
+      "name": "trial balance",
+      "covers": "an imbalance spread across several journals that each look fine alone",
+      "status": "HOLDS",
+      "population": 2,
+      "violations": []
+    },
+    {
+      "id": "INV-9",
+      "name": "business reference unique",
+      "covers": "the same real-world event posted twice under two journal ids",
+      "status": "HOLDS",
+      "population": 9,
+      "violations": []
+    }
+  ],
+  "summary": {
+    "checked": 9,
+    "holds": 9,
+    "violated": 0,
+    "vacuous": 0,
+    "verdict": "PROVEN"
+  },
+  "digest": "435def45b6f0227cecd71772f8b37119"
+}

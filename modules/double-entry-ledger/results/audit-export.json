@@ -1,0 +1,489 @@
+{
+  "ledgerId": "ldg_platform_demo",
+  "asOf": "2026-03-31",
+  "chainHead": "f4595df0a934267ea70400d6877337b8",
+  "accounts": [
+    {
+      "accountId": "acct_auth_contra",
+      "kind": "ASSET",
+      "currency": "USD",
+      "path": "assets/authorization-contra",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_clearing",
+      "kind": "ASSET",
+      "currency": "USD",
+      "path": "assets/clearing",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_fx_bridge_eur",
+      "kind": "LIABILITY",
+      "currency": "EUR",
+      "path": "liabilities/fx-bridge",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_fx_bridge_usd",
+      "kind": "ASSET",
+      "currency": "USD",
+      "path": "assets/fx-bridge",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_processing_fee",
+      "kind": "REVENUE",
+      "currency": "USD",
+      "path": "revenue/processing-fee",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_refund_expense",
+      "kind": "EXPENSE",
+      "currency": "USD",
+      "path": "expenses/refunds",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_wallet_eur",
+      "kind": "LIABILITY",
+      "currency": "EUR",
+      "path": "liabilities/customer-wallet-eur",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_wallet_usd",
+      "kind": "LIABILITY",
+      "currency": "USD",
+      "path": "liabilities/customer-wallet",
+      "isPending": false
+    },
+    {
+      "accountId": "acct_wallet_usd_pending",
+      "kind": "LIABILITY",
+      "currency": "USD",
+      "path": "liabilities/customer-wallet/pending",
+      "isPending": true
+    }
+  ],
+  "journals": [
+    {
+      "journalId": "jnl_39ee9a6e800f8b7ee4076899b3dca687",
+      "businessRef": "funding-9001",
+      "effectiveAt": "2026-02-10",
+      "recordedAt": "2026-03-01T00:00:00.000010Z",
+      "description": "Customer funds wallet",
+      "reversesJournalId": null,
+      "contentHash": "86c40748e003ccf3398072274e83eceb",
+      "chainHash": "33498191f9fdf9e2cbc4e64eb9a95abc",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_39ee9a6e800f8b7e_0001",
+          "lineNumber": 1,
+          "accountId": "acct_clearing",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "250.00",
+          "memo": "inbound"
+        },
+        {
+          "postingId": "pst_39ee9a6e800f8b7e_0002",
+          "lineNumber": 2,
+          "accountId": "acct_wallet_usd",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "250.00",
+          "memo": "wallet credit"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_51520eea6a9abe80bd96fc57435b9d4f",
+      "businessRef": "auth-9002",
+      "effectiveAt": "2026-02-11",
+      "recordedAt": "2026-03-01T00:00:00.000020Z",
+      "description": "Authorization hold, nothing moved yet",
+      "reversesJournalId": null,
+      "contentHash": "13dee3e93bac14f9c36117e55ebfa97b",
+      "chainHash": "93e0b819d7746438e4b1e0c19f2ae8de",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_51520eea6a9abe80_0001",
+          "lineNumber": 1,
+          "accountId": "acct_auth_contra",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "80.00",
+          "memo": "hold"
+        },
+        {
+          "postingId": "pst_51520eea6a9abe80_0002",
+          "lineNumber": 2,
+          "accountId": "acct_wallet_usd_pending",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "80.00",
+          "memo": "held"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_55871a720b48bf620643e4ebda78a420",
+      "businessRef": "capture-9002",
+      "effectiveAt": "2026-02-12",
+      "recordedAt": "2026-03-01T00:00:00.000030Z",
+      "description": "Capture: release the hold and move the money",
+      "reversesJournalId": null,
+      "contentHash": "90888a5de7db209714519db76ac6343f",
+      "chainHash": "1776d1e70e7767c8215979bdab450675",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_55871a720b48bf62_0001",
+          "lineNumber": 1,
+          "accountId": "acct_wallet_usd_pending",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "80.00",
+          "memo": "release"
+        },
+        {
+          "postingId": "pst_55871a720b48bf62_0002",
+          "lineNumber": 2,
+          "accountId": "acct_auth_contra",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "80.00",
+          "memo": "release"
+        },
+        {
+          "postingId": "pst_55871a720b48bf62_0003",
+          "lineNumber": 3,
+          "accountId": "acct_wallet_usd",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "80.00",
+          "memo": "captured"
+        },
+        {
+          "postingId": "pst_55871a720b48bf62_0004",
+          "lineNumber": 4,
+          "accountId": "acct_clearing",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "80.00",
+          "memo": "settled out"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_bec283b85fc38161282d21d0b5a6bb20",
+      "businessRef": "fee-9002",
+      "effectiveAt": "2026-02-12",
+      "recordedAt": "2026-03-01T00:00:00.000040Z",
+      "description": "Processing fee",
+      "reversesJournalId": null,
+      "contentHash": "d079ac1f9cb02c8510866c6c849a518e",
+      "chainHash": "8ed9b861e274065fed26d77dc267a5d1",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_bec283b85fc38161_0001",
+          "lineNumber": 1,
+          "accountId": "acct_wallet_usd",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "2.40",
+          "memo": "fee"
+        },
+        {
+          "postingId": "pst_bec283b85fc38161_0002",
+          "lineNumber": 2,
+          "accountId": "acct_processing_fee",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "2.40",
+          "memo": "fee"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_0842da3e2d8549bac54db6b29cc74c97",
+      "businessRef": "refund-9003",
+      "effectiveAt": "2026-02-27",
+      "recordedAt": "2026-03-01T00:00:00.000050Z",
+      "description": "Refund, learned about late",
+      "reversesJournalId": null,
+      "contentHash": "d3a0a2fe8c526a01019877cfb1057eb9",
+      "chainHash": "e786e148c62e488523ca74eb2f290a92",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_0842da3e2d8549ba_0001",
+          "lineNumber": 1,
+          "accountId": "acct_refund_expense",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "15.00",
+          "memo": "refund"
+        },
+        {
+          "postingId": "pst_0842da3e2d8549ba_0002",
+          "lineNumber": 2,
+          "accountId": "acct_wallet_usd",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "15.00",
+          "memo": "refunded"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_4099e44d1d637459bbed09872caf92fe",
+      "businessRef": "fee-9004",
+      "effectiveAt": "2026-03-01",
+      "recordedAt": "2026-03-01T00:00:00.000060Z",
+      "description": "Fee posted against the wrong account, to be reversed",
+      "reversesJournalId": null,
+      "contentHash": "7c2724bda1df31c2b6a55aef94d3962c",
+      "chainHash": "0871ab292126b6697ad2494b826f4c62",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_4099e44d1d637459_0001",
+          "lineNumber": 1,
+          "accountId": "acct_wallet_usd",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "99.99",
+          "memo": "wrong fee"
+        },
+        {
+          "postingId": "pst_4099e44d1d637459_0002",
+          "lineNumber": 2,
+          "accountId": "acct_processing_fee",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "99.99",
+          "memo": "wrong fee"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_2552e2437b238e3e39a11afd3134d99d",
+      "businessRef": "fee-9004-reversal",
+      "effectiveAt": "2026-03-01",
+      "recordedAt": "2026-03-01T00:00:00.000070Z",
+      "description": "Reversal of jnl_4099e44d1d637459bbed09872caf92fe: fee charged against the wrong account",
+      "reversesJournalId": "jnl_4099e44d1d637459bbed09872caf92fe",
+      "contentHash": "0cbf484211473e507e4ea3e4d13441e9",
+      "chainHash": "c66dfc237e3d15e3f052de7cca2d70d1",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_2552e2437b238e3e_0001",
+          "lineNumber": 1,
+          "accountId": "acct_wallet_usd",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "99.99",
+          "memo": "reverses pst_4099e44d1d637459_0001"
+        },
+        {
+          "postingId": "pst_2552e2437b238e3e_0002",
+          "lineNumber": 2,
+          "accountId": "acct_processing_fee",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "99.99",
+          "memo": "reverses pst_4099e44d1d637459_0002"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_bd56b441fc68ba3fa26dd7f5a2874075",
+      "businessRef": "payout-eur-9005",
+      "effectiveAt": "2026-03-02",
+      "recordedAt": "2026-03-01T00:00:00.000080Z",
+      "description": "Pay a euro wallet, crossing currencies through the bridge",
+      "reversesJournalId": null,
+      "contentHash": "06bc7e4d47982692234c5b48ea653b28",
+      "chainHash": "e5cae1351248dd5d9ea023a42499182e",
+      "fxNote": {
+        "fromCurrency": "USD",
+        "toCurrency": "EUR",
+        "rate": "10000/11000",
+        "rateSource": "synthetic-rate-table/2026-03-02"
+      },
+      "postings": [
+        {
+          "postingId": "pst_bd56b441fc68ba3f_0001",
+          "lineNumber": 1,
+          "accountId": "acct_wallet_usd",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "110.00",
+          "memo": "payout"
+        },
+        {
+          "postingId": "pst_bd56b441fc68ba3f_0002",
+          "lineNumber": 2,
+          "accountId": "acct_fx_bridge_usd",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "110.00",
+          "memo": "bridge out"
+        },
+        {
+          "postingId": "pst_bd56b441fc68ba3f_0003",
+          "lineNumber": 3,
+          "accountId": "acct_fx_bridge_eur",
+          "direction": "DEBIT",
+          "currency": "EUR",
+          "amount": "100.00",
+          "memo": "bridge in"
+        },
+        {
+          "postingId": "pst_bd56b441fc68ba3f_0004",
+          "lineNumber": 4,
+          "accountId": "acct_wallet_eur",
+          "direction": "CREDIT",
+          "currency": "EUR",
+          "amount": "100.00",
+          "memo": "payout"
+        }
+      ]
+    },
+    {
+      "journalId": "jnl_40bfaa62796a7a7aa2f764882a65ecdd",
+      "businessRef": "auth-9006",
+      "effectiveAt": "2026-03-03",
+      "recordedAt": "2026-03-01T00:00:00.000090Z",
+      "description": "A second hold, left outstanding on purpose",
+      "reversesJournalId": null,
+      "contentHash": "e9b894b667506af0dfe40b7b3d178415",
+      "chainHash": "f4595df0a934267ea70400d6877337b8",
+      "fxNote": null,
+      "postings": [
+        {
+          "postingId": "pst_40bfaa62796a7a7a_0001",
+          "lineNumber": 1,
+          "accountId": "acct_auth_contra",
+          "direction": "DEBIT",
+          "currency": "USD",
+          "amount": "30.00",
+          "memo": "hold"
+        },
+        {
+          "postingId": "pst_40bfaa62796a7a7a_0002",
+          "lineNumber": 2,
+          "accountId": "acct_wallet_usd_pending",
+          "direction": "CREDIT",
+          "currency": "USD",
+          "amount": "30.00",
+          "memo": "held"
+        }
+      ]
+    }
+  ],
+  "rejected": [],
+  "balances": [
+    {
+      "accountId": "acct_auth_contra",
+      "currency": "USD",
+      "normalDirection": "DEBIT",
+      "accounting": "30.00",
+      "evidencePostings": [
+        "pst_40bfaa62796a7a7a_0001",
+        "pst_51520eea6a9abe80_0001",
+        "pst_55871a720b48bf62_0002"
+      ]
+    },
+    {
+      "accountId": "acct_clearing",
+      "currency": "USD",
+      "normalDirection": "DEBIT",
+      "accounting": "170.00",
+      "evidencePostings": [
+        "pst_39ee9a6e800f8b7e_0001",
+        "pst_55871a720b48bf62_0004"
+      ]
+    },
+    {
+      "accountId": "acct_fx_bridge_eur",
+      "currency": "EUR",
+      "normalDirection": "CREDIT",
+      "accounting": "-100.00",
+      "evidencePostings": [
+        "pst_bd56b441fc68ba3f_0003"
+      ]
+    },
+    {
+      "accountId": "acct_fx_bridge_usd",
+      "currency": "USD",
+      "normalDirection": "DEBIT",
+      "accounting": "-110.00",
+      "evidencePostings": [
+        "pst_bd56b441fc68ba3f_0002"
+      ]
+    },
+    {
+      "accountId": "acct_processing_fee",
+      "currency": "USD",
+      "normalDirection": "CREDIT",
+      "accounting": "2.40",
+      "evidencePostings": [
+        "pst_2552e2437b238e3e_0002",
+        "pst_4099e44d1d637459_0002",
+        "pst_bec283b85fc38161_0002"
+      ]
+    },
+    {
+      "accountId": "acct_refund_expense",
+      "currency": "USD",
+      "normalDirection": "DEBIT",
+      "accounting": "15.00",
+      "evidencePostings": [
+        "pst_0842da3e2d8549ba_0001"
+      ]
+    },
+    {
+      "accountId": "acct_wallet_eur",
+      "currency": "EUR",
+      "normalDirection": "CREDIT",
+      "accounting": "100.00",
+      "evidencePostings": [
+        "pst_bd56b441fc68ba3f_0004"
+      ]
+    },
+    {
+      "accountId": "acct_wallet_usd",
+      "currency": "USD",
+      "normalDirection": "CREDIT",
+      "accounting": "72.60",
+      "evidencePostings": [
+        "pst_0842da3e2d8549ba_0002",
+        "pst_2552e2437b238e3e_0001",
+        "pst_39ee9a6e800f8b7e_0002",
+        "pst_4099e44d1d637459_0001",
+        "pst_55871a720b48bf62_0003",
+        "pst_bd56b441fc68ba3f_0001",
+        "pst_bec283b85fc38161_0001"
+      ]
+    },
+    {
+      "accountId": "acct_wallet_usd_pending",
+      "currency": "USD",
+      "normalDirection": "CREDIT",
+      "accounting": "30.00",
+      "evidencePostings": [
+        "pst_40bfaa62796a7a7a_0002",
+        "pst_51520eea6a9abe80_0002",
+        "pst_55871a720b48bf62_0001"
+      ]
+    }
+  ]
+}

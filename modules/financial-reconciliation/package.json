@@ -1,0 +1,17 @@
+{
+  "name": "financial-reconciliation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A reconciliation case corpus and accounting oracle that separate delivery de-duplication from business finality. Companion lab for Article 7.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/identity.test.ts tests/ledger.test.ts tests/reconcile.test.ts tests/windows.test.ts tests/replay.test.ts tests/corpus.test.ts",
+    "report": "node scripts/report.ts",
+    "cases": "node scripts/export-cases.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

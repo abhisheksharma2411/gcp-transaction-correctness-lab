@@ -1,0 +1,18 @@
+{
+  "name": "dispute-deadline-workflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A versioned deadline and evidence-manifest engine with deterministic replay. Companion lab for Article 21.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/zones.test.ts tests/deadline.test.ts tests/manifest.test.ts tests/case.test.ts tests/timers.test.ts tests/governance.test.ts tests/controls.test.ts",
+    "report": "node scripts/report.ts",
+    "mutate": "node scripts/mutate.ts --check",
+    "tz-drift": "node scripts/tz-drift.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

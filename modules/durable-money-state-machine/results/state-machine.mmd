@@ -1,0 +1,30 @@
+%% generated from src/spec.ts by scripts/generate.ts -- do not edit
+stateDiagram-v2
+    [*] --> DRAFT
+    DRAFT --> AUTHORIZED: authorize [actor-is-service, amount-within-auto-limit]
+    DRAFT --> MANUAL_REVIEW: authorize [actor-is-service, amount-above-auto-limit]
+    DRAFT --> CANCELLED: cancel
+    AUTHORIZED --> SUBMITTED: submit [actor-is-service]
+    AUTHORIZED --> CANCELLED: cancel
+    SUBMITTED --> SETTLED: callback_settled [actor-is-provider, callback-token-matches]
+    SUBMITTED --> DECLINED: callback_declined [actor-is-provider, callback-token-matches]
+    SUBMITTED --> RECONCILING: timer_expired
+    RECONCILING --> SETTLED: lookup_settled [actor-is-service]
+    RECONCILING --> DECLINED: lookup_declined [actor-is-service]
+    RECONCILING --> MANUAL_REVIEW: lookup_indeterminate [actor-is-service]
+    RECONCILING --> SETTLED: callback_settled [actor-is-provider, callback-token-matches]
+    RECONCILING --> DECLINED: callback_declined [actor-is-provider, callback-token-matches]
+    MANUAL_REVIEW --> AUTHORIZED: review_approve [actor-is-operator, reviewer-is-not-initiator, within-reviewer-limit]
+    MANUAL_REVIEW --> CANCELLED: review_reject [actor-is-operator, reviewer-is-not-initiator]
+    MANUAL_REVIEW --> CANCELLED: cancel [actor-is-service]
+    SETTLED --> [*]
+    DECLINED --> [*]
+    CANCELLED --> [*]
+    note right of SUBMITTED
+        waits on payment-provider
+        deadline 6h via timer
+    end note
+    note right of MANUAL_REVIEW
+        waits on payouts-operations
+        deadline 24h via sweep
+    end note

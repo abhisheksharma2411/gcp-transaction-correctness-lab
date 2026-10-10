@@ -1,0 +1,247 @@
+{
+  "generatedFrom": "scripts/report.ts",
+  "note": "Deterministic. No cloud project, no credentials, no network.",
+  "crashMatrix": [
+    {
+      "crashAt": "none",
+      "strategy": "outbox",
+      "committed": 1,
+      "eventsOnTopic": 1,
+      "protectedEffects": 2,
+      "findings": []
+    },
+    {
+      "crashAt": "none",
+      "strategy": "publish-after-commit",
+      "committed": 1,
+      "eventsOnTopic": 1,
+      "protectedEffects": 2,
+      "findings": []
+    },
+    {
+      "crashAt": "none",
+      "strategy": "publish-before-commit",
+      "committed": 1,
+      "eventsOnTopic": 1,
+      "protectedEffects": 2,
+      "findings": []
+    },
+    {
+      "crashAt": "before-commit",
+      "strategy": "outbox",
+      "committed": 0,
+      "eventsOnTopic": 0,
+      "protectedEffects": 0,
+      "findings": []
+    },
+    {
+      "crashAt": "before-commit",
+      "strategy": "publish-after-commit",
+      "committed": 0,
+      "eventsOnTopic": 0,
+      "protectedEffects": 0,
+      "findings": []
+    },
+    {
+      "crashAt": "before-commit",
+      "strategy": "publish-before-commit",
+      "committed": 0,
+      "eventsOnTopic": 1,
+      "protectedEffects": 2,
+      "findings": [
+        "L02_PHANTOM_EVENT"
+      ]
+    },
+    {
+      "crashAt": "after-commit-before-publish",
+      "strategy": "outbox",
+      "committed": 1,
+      "eventsOnTopic": 1,
+      "protectedEffects": 2,
+      "findings": []
+    },
+    {
+      "crashAt": "after-commit-before-publish",
+      "strategy": "publish-after-commit",
+      "committed": 1,
+      "eventsOnTopic": 0,
+      "protectedEffects": 0,
+      "findings": [
+        "L01_MISSING_EVENT"
+      ]
+    },
+    {
+      "crashAt": "after-commit-before-publish",
+      "strategy": "publish-before-commit",
+      "committed": 1,
+      "eventsOnTopic": 1,
+      "protectedEffects": 2,
+      "findings": []
+    },
+    {
+      "crashAt": "after-publish-before-checkpoint",
+      "strategy": "outbox",
+      "committed": 1,
+      "eventsOnTopic": 2,
+      "protectedEffects": 2,
+      "findings": []
+    }
+  ],
+  "standardRun": {
+    "tally": {
+      "committedChanges": 5,
+      "eventsCaptured": 5,
+      "messagesOnTopic": 7,
+      "deliveries": 18,
+      "effectApplications": 7,
+      "distinctProtectedEffects": 7,
+      "suppressedByInbox": 4,
+      "suppressedBySequence": 0,
+      "suppressedByEffectLedger": 0,
+      "deadLettered": 3,
+      "repaired": 3,
+      "replayed": 2
+    },
+    "findings": []
+  },
+  "negativeControls": [
+    {
+      "name": "publish-after-commit",
+      "defect": "the event is published after the commit instead of with it",
+      "expected": [
+        "L01_MISSING_EVENT"
+      ],
+      "produced": [
+        "L01_MISSING_EVENT"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "publish-before-commit",
+      "defect": "the event is published before the commit, and the commit does not happen",
+      "expected": [
+        "L02_PHANTOM_EVENT"
+      ],
+      "produced": [
+        "L02_PHANTOM_EVENT"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "relay-never-runs",
+      "defect": "the outbox is written and nothing drains it",
+      "expected": [
+        "L03_UNPUBLISHED",
+        "L09_REPLAY_DIVERGENCE"
+      ],
+      "produced": [
+        "L03_UNPUBLISHED",
+        "L09_REPLAY_DIVERGENCE"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "no-guards",
+      "defect": "the consumer has no inbox, no sequence position and no effect ledger",
+      "expected": [
+        "L05_DUPLICATE_PROTECTED_EFFECT",
+        "L08_ORDER_VIOLATION"
+      ],
+      "produced": [
+        "L05_DUPLICATE_PROTECTED_EFFECT",
+        "L08_ORDER_VIOLATION"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "ignore-schema-version",
+      "defect": "an unknown schema version is treated as though it were understood",
+      "expected": [
+        "L06_UNHANDLED_SCHEMA_VERSION"
+      ],
+      "produced": [
+        "L06_UNHANDLED_SCHEMA_VERSION"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "no-sequence-guard",
+      "defect": "events are applied in the order they arrive",
+      "expected": [
+        "L08_ORDER_VIOLATION"
+      ],
+      "produced": [
+        "L08_ORDER_VIOLATION"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "no-dead-letter-repair",
+      "defect": "events reach the dead-letter topic and nobody records what was done",
+      "expected": [
+        "L10_DEAD_LETTER_UNRESOLVED"
+      ],
+      "produced": [
+        "L10_DEAD_LETTER_UNRESOLVED"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "consumer-never-drains",
+      "defect": "one consumer's subscription is never read",
+      "expected": [
+        "L04_UNDELIVERED"
+      ],
+      "produced": [
+        "L04_UNDELIVERED"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "manual-repair-off-the-record",
+      "defect": "an operator applies an effect by hand, with no delivery behind it",
+      "expected": [
+        "L07_ORPHAN_EFFECT"
+      ],
+      "produced": [
+        "L07_ORPHAN_EFFECT"
+      ],
+      "detected": true,
+      "mustBeRejected": false,
+      "blunt": false
+    },
+    {
+      "name": "everything-at-once",
+      "defect": "no guards, misordered publication, a crashed relay and no repair, all at once",
+      "expected": [],
+      "produced": [
+        "L03_UNPUBLISHED",
+        "L05_DUPLICATE_PROTECTED_EFFECT",
+        "L08_ORDER_VIOLATION"
+      ],
+      "detected": false,
+      "mustBeRejected": true,
+      "blunt": true
+    }
+  ],
+  "projection": {
+    "forward": "ord-a@1:[sku-1];ord-b@2:[sku-3];ord-c@1:[];ord-d@1:[sku-5]",
+    "reversed": "ord-a@1:[sku-1];ord-b@2:[sku-3];ord-c@1:[];ord-d@1:[sku-5]"
+  }
+}

@@ -1,0 +1,88 @@
+2026-02-03T09:00:00.000Z  tx-begin           txId=tx-001 aggregateId=ord-a
+2026-02-03T09:00:00.000Z  outbox-write       txId=tx-001 eventId=evt-40ef0e25bb971096
+2026-02-03T09:00:00.000Z  commit             txId=tx-001 aggregateId=ord-a sequence=1
+2026-02-04T09:00:00.000Z  tx-begin           txId=tx-002 aggregateId=ord-b
+2026-02-04T09:00:00.000Z  outbox-write       txId=tx-002 eventId=evt-1615f81e38528c79
+2026-02-04T09:00:00.000Z  commit             txId=tx-002 aggregateId=ord-b sequence=1
+2026-02-04T09:00:00.001Z  tx-begin           txId=tx-003 aggregateId=ord-b
+2026-02-04T09:00:00.001Z  outbox-write       txId=tx-003 eventId=evt-7f321a797b210806
+2026-02-04T09:00:00.001Z  commit             txId=tx-003 aggregateId=ord-b sequence=2
+2026-02-05T09:00:00.000Z  tx-begin           txId=tx-004 aggregateId=ord-c
+2026-02-05T09:00:00.000Z  outbox-write       txId=tx-004 eventId=evt-ff9e306ec708b3cc
+2026-02-05T09:00:00.000Z  commit             txId=tx-004 aggregateId=ord-c sequence=1
+2026-02-05T09:00:00.001Z  tx-begin           txId=tx-005 aggregateId=ord-d
+2026-02-05T09:00:00.001Z  outbox-write       txId=tx-005 eventId=evt-c49e82bf9a84b897
+2026-02-05T09:00:00.001Z  commit             txId=tx-005 aggregateId=ord-d sequence=1
+2026-02-06T09:00:00.002Z  publish            eventId=evt-40ef0e25bb971096 messageId=msg-0001 relay=relay-a attempt=1
+2026-02-06T09:00:00.002Z  checkpoint         eventId=evt-40ef0e25bb971096 relay=relay-a
+2026-02-06T09:00:00.002Z  publish            eventId=evt-1615f81e38528c79 messageId=msg-0002 relay=relay-a attempt=1
+2026-02-06T09:00:00.002Z  checkpoint         eventId=evt-1615f81e38528c79 relay=relay-a
+2026-02-06T09:00:00.002Z  publish            eventId=evt-7f321a797b210806 messageId=msg-0003 relay=relay-a attempt=1
+2026-02-06T09:00:00.002Z  checkpoint         eventId=evt-7f321a797b210806 relay=relay-a
+2026-02-06T09:00:00.002Z  publish            eventId=evt-ff9e306ec708b3cc messageId=msg-0004 relay=relay-a attempt=1
+2026-02-06T09:00:00.002Z  checkpoint         eventId=evt-ff9e306ec708b3cc relay=relay-a
+2026-02-06T09:00:00.002Z  publish            eventId=evt-c49e82bf9a84b897 messageId=msg-0005 relay=relay-a attempt=1
+2026-02-06T09:00:00.002Z  checkpoint         eventId=evt-c49e82bf9a84b897 relay=relay-a
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0001 eventId=evt-40ef0e25bb971096 consumer=inventory deliveryAttempt=1
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0002 eventId=evt-1615f81e38528c79 consumer=inventory deliveryAttempt=1
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0004 eventId=evt-ff9e306ec708b3cc consumer=inventory deliveryAttempt=1
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0005 eventId=evt-c49e82bf9a84b897 consumer=inventory deliveryAttempt=1
+2026-02-07T09:00:00.000Z  effect             consumer=inventory effectId=eff-1cbd951cabba9d3b eventId=evt-40ef0e25bb971096 effectKind=reserve
+2026-02-07T09:00:00.000Z  ack                consumer=inventory messageId=msg-0001
+2026-02-07T09:00:00.000Z  effect             consumer=inventory effectId=eff-e8d3e8b38416b25f eventId=evt-1615f81e38528c79 effectKind=reserve
+2026-02-07T09:00:00.000Z  ack                consumer=inventory messageId=msg-0002
+2026-02-07T09:00:00.000Z  nack               consumer=inventory messageId=msg-0004 reason=non-positive quantity for sku-4
+2026-02-07T09:00:00.000Z  unhandled-version  consumer=inventory eventId=evt-c49e82bf9a84b897 schemaVersion=3 routedToDeadLetter=true
+2026-02-07T09:00:00.000Z  publish            eventId=evt-c49e82bf9a84b897 messageId=msg-0006 relay=inventory:unknown-version attempt=1
+2026-02-07T09:00:00.000Z  dead-letter        messageId=msg-0005 eventId=evt-c49e82bf9a84b897 subscription=inventory-sub reason=unknown schema version 3
+2026-02-07T09:00:00.000Z  ack                consumer=inventory messageId=msg-0005
+2026-02-07T09:00:00.001Z  deliver            messageId=msg-0003 eventId=evt-7f321a797b210806 consumer=inventory deliveryAttempt=1
+2026-02-07T09:00:00.001Z  deliver            messageId=msg-0004 eventId=evt-ff9e306ec708b3cc consumer=inventory deliveryAttempt=2
+2026-02-07T09:00:00.001Z  effect             consumer=inventory effectId=eff-861a6c653c9cc95d eventId=evt-7f321a797b210806 effectKind=reserve
+2026-02-07T09:00:00.001Z  ack                consumer=inventory messageId=msg-0003
+2026-02-07T09:00:00.001Z  nack               consumer=inventory messageId=msg-0004 reason=non-positive quantity for sku-4
+2026-02-07T09:00:00.002Z  deliver            messageId=msg-0004 eventId=evt-ff9e306ec708b3cc consumer=inventory deliveryAttempt=3
+2026-02-07T09:00:00.002Z  nack               consumer=inventory messageId=msg-0004 reason=non-positive quantity for sku-4
+2026-02-07T09:00:00.003Z  deliver            messageId=msg-0004 eventId=evt-ff9e306ec708b3cc consumer=inventory deliveryAttempt=4
+2026-02-07T09:00:00.003Z  nack               consumer=inventory messageId=msg-0004 reason=non-positive quantity for sku-4
+2026-02-07T09:00:00.004Z  deliver            messageId=msg-0004 eventId=evt-ff9e306ec708b3cc consumer=inventory deliveryAttempt=5
+2026-02-07T09:00:00.004Z  nack               consumer=inventory messageId=msg-0004 reason=non-positive quantity for sku-4
+2026-02-07T09:00:00.004Z  publish            eventId=evt-ff9e306ec708b3cc messageId=msg-0007 relay=dead-letter attempt=1
+2026-02-07T09:00:00.004Z  dead-letter        messageId=msg-0004 eventId=evt-ff9e306ec708b3cc subscription=inventory-sub reason=non-positive quantity for sku-4
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0001 eventId=evt-40ef0e25bb971096 consumer=notifications deliveryAttempt=1
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0002 eventId=evt-1615f81e38528c79 consumer=notifications deliveryAttempt=1
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0004 eventId=evt-ff9e306ec708b3cc consumer=notifications deliveryAttempt=1
+2026-02-07T09:00:00.000Z  deliver            messageId=msg-0005 eventId=evt-c49e82bf9a84b897 consumer=notifications deliveryAttempt=1
+2026-02-07T09:00:00.000Z  effect             consumer=notifications effectId=eff-c094771e06c32e50 eventId=evt-40ef0e25bb971096 effectKind=notify
+2026-02-07T09:00:00.000Z  ack                consumer=notifications messageId=msg-0001
+2026-02-07T09:00:00.000Z  effect             consumer=notifications effectId=eff-a0deaa5943a3009a eventId=evt-1615f81e38528c79 effectKind=notify
+2026-02-07T09:00:00.000Z  ack                consumer=notifications messageId=msg-0002
+2026-02-07T09:00:00.000Z  effect             consumer=notifications effectId=eff-4337afd6ab65c4a4 eventId=evt-ff9e306ec708b3cc effectKind=notify
+2026-02-07T09:00:00.000Z  ack                consumer=notifications messageId=msg-0004
+2026-02-07T09:00:00.000Z  unhandled-version  consumer=notifications eventId=evt-c49e82bf9a84b897 schemaVersion=3 routedToDeadLetter=true
+2026-02-07T09:00:00.000Z  publish            eventId=evt-c49e82bf9a84b897 messageId=msg-0008 relay=notifications:unknown-version attempt=2
+2026-02-07T09:00:00.000Z  dead-letter        messageId=msg-0005 eventId=evt-c49e82bf9a84b897 subscription=notify-sub reason=unknown schema version 3
+2026-02-07T09:00:00.000Z  ack                consumer=notifications messageId=msg-0005
+2026-02-07T09:00:00.001Z  deliver            messageId=msg-0003 eventId=evt-7f321a797b210806 consumer=notifications deliveryAttempt=1
+2026-02-07T09:00:00.001Z  effect             consumer=notifications effectId=eff-6d020d636aa9eb35 eventId=evt-7f321a797b210806 effectKind=notify
+2026-02-07T09:00:00.001Z  ack                consumer=notifications messageId=msg-0003
+2026-02-08T09:00:00.000Z  dead-letter-repair eventId=evt-c49e82bf9a84b897 action=held for consumer upgrade
+2026-02-08T09:00:00.000Z  dead-letter-repair eventId=evt-ff9e306ec708b3cc action=quantity corrected at source
+2026-02-08T09:00:00.000Z  dead-letter-repair eventId=evt-c49e82bf9a84b897 action=held for consumer upgrade
+2026-02-09T09:00:00.000Z  replay-plan        batchId=ctl eventIds=[evt-1615f81e38528c79,evt-7f321a797b210806] dryRun=false
+2026-02-09T09:00:00.000Z  publish            eventId=evt-1615f81e38528c79 messageId=msg-0009 relay=replay:ctl attempt=2
+2026-02-09T09:00:00.000Z  replay-publish     batchId=ctl eventId=evt-1615f81e38528c79
+2026-02-09T09:00:00.001Z  publish            eventId=evt-7f321a797b210806 messageId=msg-0010 relay=replay:ctl attempt=2
+2026-02-09T09:00:00.001Z  replay-publish     batchId=ctl eventId=evt-7f321a797b210806
+2026-02-09T09:01:00.000Z  deliver            messageId=msg-0009 eventId=evt-1615f81e38528c79 consumer=inventory deliveryAttempt=1
+2026-02-09T09:01:00.000Z  inbox-hit          consumer=inventory eventId=evt-1615f81e38528c79
+2026-02-09T09:01:00.000Z  ack                consumer=inventory messageId=msg-0009
+2026-02-09T09:01:00.001Z  deliver            messageId=msg-0010 eventId=evt-7f321a797b210806 consumer=inventory deliveryAttempt=1
+2026-02-09T09:01:00.001Z  inbox-hit          consumer=inventory eventId=evt-7f321a797b210806
+2026-02-09T09:01:00.001Z  ack                consumer=inventory messageId=msg-0010
+2026-02-09T09:01:00.000Z  deliver            messageId=msg-0009 eventId=evt-1615f81e38528c79 consumer=notifications deliveryAttempt=1
+2026-02-09T09:01:00.000Z  inbox-hit          consumer=notifications eventId=evt-1615f81e38528c79
+2026-02-09T09:01:00.000Z  ack                consumer=notifications messageId=msg-0009
+2026-02-09T09:01:00.001Z  deliver            messageId=msg-0010 eventId=evt-7f321a797b210806 consumer=notifications deliveryAttempt=1
+2026-02-09T09:01:00.001Z  inbox-hit          consumer=notifications eventId=evt-7f321a797b210806
+2026-02-09T09:01:00.001Z  ack                consumer=notifications messageId=msg-0010
