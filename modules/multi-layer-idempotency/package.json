@@ -1,0 +1,18 @@
+{
+  "name": "multi-layer-idempotency",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A language-neutral idempotency contract and executable conformance matrix. Companion lab for Article 12.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/contract.test.ts tests/fingerprint.test.ts tests/layers.test.ts tests/boundaries.test.ts tests/conformance.test.ts",
+    "report": "node scripts/report.ts",
+    "matrix": "node scripts/export-matrix.ts",
+    "replay": "node scripts/replay.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

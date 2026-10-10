@@ -1,0 +1,428 @@
+{
+  "generatedFrom": "scripts/report.ts",
+  "evaluatedAt": "2026-01-05T00:00:00.000Z",
+  "note": "Deterministic. No cloud project, no credentials, no network.",
+  "matrix": [
+    {
+      "id": "C01",
+      "title": "same key, same payload, before the first copy finishes",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C02",
+      "title": "a second copy arrives while the first is still running",
+      "passed": true,
+      "effects": 0,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "IN_PROGRESS"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C03",
+      "title": "same key, same payload, after the first copy finished",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C04",
+      "title": "same key, different payload",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "CONFLICT"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C05",
+      "title": "key order and whitespace differ, intent does not",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C06",
+      "title": "two different keys claim the same business reference",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "FIRST"
+      ],
+      "caughtBy": [
+        null,
+        "business-uniqueness"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C07",
+      "title": "message redelivered after the effect, before the acknowledgement",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C08",
+      "title": "the same payload published twice gets two message ids",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C09",
+      "title": "a task name is refused inside its de-duplication window",
+      "passed": true,
+      "effects": 0,
+      "arrivals": 0,
+      "providerAttempts": 0,
+      "decisions": [],
+      "caughtBy": [],
+      "rejectedSteps": [
+        1
+      ],
+      "failures": []
+    },
+    {
+      "id": "C10",
+      "title": "the same task name is accepted once the window has passed",
+      "passed": true,
+      "effects": 0,
+      "arrivals": 0,
+      "providerAttempts": 0,
+      "decisions": [],
+      "caughtBy": [],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C11",
+      "title": "a workflow retries a step and carries the operation id",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 3,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract",
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C12",
+      "title": "a workflow retries a step and mints a fresh id each time",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 3,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "FIRST",
+        "FIRST"
+      ],
+      "caughtBy": [
+        null,
+        "business-uniqueness",
+        "business-uniqueness"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C13",
+      "title": "the provider times out and the outcome is unknown",
+      "passed": true,
+      "effects": 0,
+      "arrivals": 1,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST"
+      ],
+      "caughtBy": [
+        null
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C14",
+      "title": "an unknown outcome is resolved from the provider",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 1,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST"
+      ],
+      "caughtBy": [
+        null
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C15",
+      "title": "a replay after the record was evicted",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 2,
+      "decisions": [
+        "FIRST",
+        "FIRST"
+      ],
+      "caughtBy": [
+        null,
+        "effect-ledger"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C16",
+      "title": "a replay after eviction, under a different operation id",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "FIRST"
+      ],
+      "caughtBy": [
+        null,
+        "business-uniqueness"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C17",
+      "title": "a provider webhook fires twice for one operation",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C18",
+      "title": "one operation causes two distinct effects",
+      "passed": true,
+      "effects": 2,
+      "arrivals": 2,
+      "providerAttempts": 2,
+      "decisions": [
+        "FIRST",
+        "FIRST"
+      ],
+      "caughtBy": [
+        null,
+        null
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C19",
+      "title": "a final failure is recorded, not retried into existence",
+      "passed": true,
+      "effects": 0,
+      "arrivals": 2,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    },
+    {
+      "id": "C20",
+      "title": "every boundary at once, one operation",
+      "passed": true,
+      "effects": 1,
+      "arrivals": 7,
+      "providerAttempts": 1,
+      "decisions": [
+        "FIRST",
+        "REPLAY",
+        "REPLAY",
+        "REPLAY",
+        "REPLAY",
+        "REPLAY",
+        "REPLAY"
+      ],
+      "caughtBy": [
+        null,
+        "contract",
+        "contract",
+        "contract",
+        "contract",
+        "contract",
+        "contract"
+      ],
+      "rejectedSteps": [],
+      "failures": []
+    }
+  ],
+  "fourWayTally": {
+    "tally": {
+      "arrivals": 13,
+      "admitted": 1,
+      "providerAttempts": 1,
+      "effects": 1
+    },
+    "inboxSuppressed": 0,
+    "webhookSuppressed": 1,
+    "effectLedgerSuppressed": 0,
+    "caughtBy": {
+      "did-real-work": 1,
+      "contract": 12
+    }
+  },
+  "afterEvictionTally": {
+    "evicted": 1,
+    "tally": {
+      "arrivals": 3,
+      "admitted": 2,
+      "providerAttempts": 2,
+      "effects": 1
+    },
+    "caughtBy": {
+      "did-real-work": 1,
+      "effect-ledger": 1,
+      "business-uniqueness": 1
+    }
+  },
+  "negativeControls": [
+    {
+      "removed": "no-fingerprint-check",
+      "casesTurnedRed": [
+        "C04"
+      ],
+      "detected": true
+    },
+    {
+      "removed": "no-business-uniqueness",
+      "casesTurnedRed": [
+        "C06",
+        "C12",
+        "C16"
+      ],
+      "detected": true
+    },
+    {
+      "removed": "no-effect-ledger",
+      "casesTurnedRed": [
+        "C15"
+      ],
+      "detected": true
+    },
+    {
+      "removed": "naive-fingerprint",
+      "casesTurnedRed": [
+        "C05"
+      ],
+      "detected": true
+    }
+  ]
+}
