@@ -1,0 +1,17 @@
+{
+  "name": "settlement-reconciliation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Provider settlement files, fees, bank deposits and an exception workflow, with a deterministic fixture corpus and a per-row explanation report. Companion lab for Article 19.",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/intake.test.ts tests/parsers.test.ts tests/matching.test.ts tests/posting.test.ts tests/exceptions.test.ts tests/conservation.test.ts tests/replay.test.ts tests/controls.test.ts",
+    "report": "node scripts/report.ts",
+    "explain": "node scripts/explain.ts",
+    "verify": "make verify",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

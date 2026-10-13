@@ -1,0 +1,90 @@
+[
+  {
+    "fileId": "f-5258d95229ad",
+    "declaredName": "settlement-2026-03-04.v2.jsonl",
+    "digest": "5258d95229adf73fb702967ec7856bd0ce947c321e283c0018aff5b8bb8c618f",
+    "crc32c": "15587589",
+    "byteLength": 12674,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-8604ae5b6f4f",
+    "declaredName": "settlement-2026-03-05.jsonl",
+    "digest": "8604ae5b6f4f6f5201620f7ebeccb10d75c65a758fe3db77058a35a05190a128",
+    "crc32c": "5e78a15f",
+    "byteLength": 4378,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-9cc20067145e",
+    "declaredName": "detail-2026-03-02.csv",
+    "digest": "9cc20067145eef955e8479dd0693c83ea4032891ba55b0aab1ce078191414dad",
+    "crc32c": "d0f47bdc",
+    "byteLength": 3525,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-9cc20067145e-dup1",
+    "declaredName": "detail-2026-03-02.csv",
+    "digest": "9cc20067145eef955e8479dd0693c83ea4032891ba55b0aab1ce078191414dad",
+    "crc32c": "d0f47bdc",
+    "byteLength": 3525,
+    "disposition": "DUPLICATE_IGNORED"
+  },
+  {
+    "fileId": "f-9cc20067145e-dup2",
+    "declaredName": "detail-2026-03-02-resend.csv",
+    "digest": "9cc20067145eef955e8479dd0693c83ea4032891ba55b0aab1ce078191414dad",
+    "crc32c": "d0f47bdc",
+    "byteLength": 3525,
+    "disposition": "DUPLICATE_IGNORED"
+  },
+  {
+    "fileId": "f-b73ec02ee60c",
+    "declaredName": "summary-2026-03-06.csv",
+    "digest": "b73ec02ee60c252e350d0e9d8826ab46eb3a0fdef143911d6e2971d6c1d7f273",
+    "crc32c": "7ff8d9ec",
+    "byteLength": 195,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-c1cd4eeaedf1-conflict3",
+    "declaredName": "detail-2026-03-02.csv",
+    "digest": "c1cd4eeaedf181c4115b7754818934c708290618df03434086dce5d6b9b1ac2f",
+    "crc32c": "d24f47e2",
+    "byteLength": 3525,
+    "disposition": "CONTENT_CONFLICT"
+  },
+  {
+    "fileId": "f-cb6ffd6818ac",
+    "declaredName": "statement-2026-03-06.json",
+    "digest": "cb6ffd6818ac34de1259445929284ffb47d2796584569f6d514afb12fe1d34d1",
+    "crc32c": "2af2d5b5",
+    "byteLength": 554,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-d3cd39b8eb3d",
+    "declaredName": "detail-2026-03-03.csv",
+    "digest": "d3cd39b8eb3d6ea6f3a58d55c9d3e1a2f0f0a7d7f3006effb598393479ee26da",
+    "crc32c": "1aa2000f",
+    "byteLength": 3926,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-e3d80387f00b",
+    "declaredName": "summary-2026-03-05.csv",
+    "digest": "e3d80387f00bec3922ead703ee9d746722db93b303263261ad18639265214560",
+    "crc32c": "9a91aada",
+    "byteLength": 194,
+    "disposition": "ACCEPTED"
+  },
+  {
+    "fileId": "f-f303f5d30077",
+    "declaredName": "settlement-2026-03-04.jsonl",
+    "digest": "f303f5d30077cf68405577bcc75fcc2099cd5906a5bd568516767e69f2b4cfa7",
+    "crc32c": "94409d82",
+    "byteLength": 12674,
+    "disposition": "SUPERSEDED"
+  }
+]

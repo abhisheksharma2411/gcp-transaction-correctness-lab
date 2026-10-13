@@ -1,0 +1,463 @@
+{
+  "corpus": {
+    "expectations": 180,
+    "filesDelivered": 11,
+    "providerRecords": 182,
+    "batchSummaries": 4,
+    "bankEntries": 3
+  },
+  "aggregateTieOut": {
+    "expected": 1628981,
+    "provider": 1628981,
+    "bank": 1628981,
+    "difference": 0,
+    "differenceToProvider": 0
+  },
+  "rowLevel": {
+    "matched": 173,
+    "matchedWithAdjustment": 2,
+    "pending": 0,
+    "exceptionCases": 7,
+    "exceptionExposureMinor": 150655
+  },
+  "fileIntake": [
+    [
+      "ACCEPTED",
+      7
+    ],
+    [
+      "CONTENT_CONFLICT",
+      1
+    ],
+    [
+      "DUPLICATE_IGNORED",
+      2
+    ],
+    [
+      "SUPERSEDED",
+      1
+    ]
+  ],
+  "manifest": [
+    {
+      "fileId": "f-5258d95229ad",
+      "declaredName": "settlement-2026-03-04.v2.jsonl",
+      "digest": "5258d95229adf73fb702967ec7856bd0ce947c321e283c0018aff5b8bb8c618f",
+      "crc32c": "15587589",
+      "byteLength": 12674,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-8604ae5b6f4f",
+      "declaredName": "settlement-2026-03-05.jsonl",
+      "digest": "8604ae5b6f4f6f5201620f7ebeccb10d75c65a758fe3db77058a35a05190a128",
+      "crc32c": "5e78a15f",
+      "byteLength": 4378,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-9cc20067145e",
+      "declaredName": "detail-2026-03-02.csv",
+      "digest": "9cc20067145eef955e8479dd0693c83ea4032891ba55b0aab1ce078191414dad",
+      "crc32c": "d0f47bdc",
+      "byteLength": 3525,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-9cc20067145e-dup1",
+      "declaredName": "detail-2026-03-02.csv",
+      "digest": "9cc20067145eef955e8479dd0693c83ea4032891ba55b0aab1ce078191414dad",
+      "crc32c": "d0f47bdc",
+      "byteLength": 3525,
+      "disposition": "DUPLICATE_IGNORED"
+    },
+    {
+      "fileId": "f-9cc20067145e-dup2",
+      "declaredName": "detail-2026-03-02-resend.csv",
+      "digest": "9cc20067145eef955e8479dd0693c83ea4032891ba55b0aab1ce078191414dad",
+      "crc32c": "d0f47bdc",
+      "byteLength": 3525,
+      "disposition": "DUPLICATE_IGNORED"
+    },
+    {
+      "fileId": "f-b73ec02ee60c",
+      "declaredName": "summary-2026-03-06.csv",
+      "digest": "b73ec02ee60c252e350d0e9d8826ab46eb3a0fdef143911d6e2971d6c1d7f273",
+      "crc32c": "7ff8d9ec",
+      "byteLength": 195,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-c1cd4eeaedf1-conflict3",
+      "declaredName": "detail-2026-03-02.csv",
+      "digest": "c1cd4eeaedf181c4115b7754818934c708290618df03434086dce5d6b9b1ac2f",
+      "crc32c": "d24f47e2",
+      "byteLength": 3525,
+      "disposition": "CONTENT_CONFLICT"
+    },
+    {
+      "fileId": "f-cb6ffd6818ac",
+      "declaredName": "statement-2026-03-06.json",
+      "digest": "cb6ffd6818ac34de1259445929284ffb47d2796584569f6d514afb12fe1d34d1",
+      "crc32c": "2af2d5b5",
+      "byteLength": 554,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-d3cd39b8eb3d",
+      "declaredName": "detail-2026-03-03.csv",
+      "digest": "d3cd39b8eb3d6ea6f3a58d55c9d3e1a2f0f0a7d7f3006effb598393479ee26da",
+      "crc32c": "1aa2000f",
+      "byteLength": 3926,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-e3d80387f00b",
+      "declaredName": "summary-2026-03-05.csv",
+      "digest": "e3d80387f00bec3922ead703ee9d746722db93b303263261ad18639265214560",
+      "crc32c": "9a91aada",
+      "byteLength": 194,
+      "disposition": "ACCEPTED"
+    },
+    {
+      "fileId": "f-f303f5d30077",
+      "declaredName": "settlement-2026-03-04.jsonl",
+      "digest": "f303f5d30077cf68405577bcc75fcc2099cd5906a5bd568516767e69f2b4cfa7",
+      "crc32c": "94409d82",
+      "byteLength": 12674,
+      "disposition": "SUPERSEDED"
+    }
+  ],
+  "rulesFired": [
+    [
+      "M1_PROVIDER_TXN_ID",
+      174
+    ],
+    [
+      "M2_REF_AMOUNT_CURRENCY",
+      1
+    ],
+    [
+      "M3_REFUND_ACROSS_DAYS",
+      1
+    ],
+    [
+      "M4_SPLIT_TO_ONE",
+      1
+    ],
+    [
+      "M5_PARTIAL_SETTLEMENT",
+      1
+    ]
+  ],
+  "exceptionsByReason": [
+    {
+      "reason": "CURRENCY_MISMATCH",
+      "count": 1,
+      "exposureMinor": 24245
+    },
+    {
+      "reason": "DUPLICATE_PROVIDER_RECORD",
+      "count": 1,
+      "exposureMinor": 19420
+    },
+    {
+      "reason": "FEE_VARIANCE_BEYOND_TOLERANCE",
+      "count": 2,
+      "exposureMinor": 240
+    },
+    {
+      "reason": "MISSING_PROVIDER_RECORD",
+      "count": 1,
+      "exposureMinor": 43665
+    },
+    {
+      "reason": "PARTIAL_SETTLEMENT",
+      "count": 1,
+      "exposureMinor": 19420
+    },
+    {
+      "reason": "UNKNOWN_TO_LEDGER",
+      "count": 1,
+      "exposureMinor": 43665
+    }
+  ],
+  "postings": [
+    [
+      "HOLD",
+      5
+    ],
+    [
+      "POST_ADJUSTMENT",
+      2
+    ],
+    [
+      "POST_SETTLEMENT",
+      175
+    ]
+  ],
+  "postedSettlementUsdMinor": 1487705,
+  "conservation": [
+    {
+      "currency": "EUR",
+      "expectedMinor": 24245,
+      "settledMinor": 0,
+      "residualMinor": 24245,
+      "pendingMinor": 0,
+      "holds": true
+    },
+    {
+      "currency": "USD",
+      "expectedMinor": 1604736,
+      "settledMinor": 1541651,
+      "residualMinor": 63085,
+      "pendingMinor": 0,
+      "holds": true
+    }
+  ],
+  "rowBreaches": [],
+  "providerPartition": [
+    {
+      "currency": "USD",
+      "providerMinor": 1628981,
+      "attributedMinor": 1565896,
+      "unattributedMinor": 63085,
+      "holds": true
+    }
+  ],
+  "cutoffs": {
+    "full": {
+      "pending": 0,
+      "exceptions": 7,
+      "aggregate": {
+        "expected": 1628981,
+        "provider": 1628981,
+        "bank": 1628981,
+        "difference": 0,
+        "differenceToProvider": 0
+      }
+    },
+    "early": {
+      "pending": 22,
+      "exceptions": 7,
+      "aggregate": {
+        "expected": 1628981,
+        "provider": 1835118,
+        "bank": 1628981,
+        "difference": 0,
+        "differenceToProvider": -206137
+      }
+    },
+    "noBank": {
+      "postSettlement": 0,
+      "deferred": 175
+    }
+  },
+  "parserGenerations": {
+    "current": {
+      "records": 182,
+      "refusals": 0
+    },
+    "previous": {
+      "records": 131,
+      "refusals": [
+        {
+          "fileId": "f-d3cd39b8eb3d",
+          "declaredName": "detail-2026-03-03.csv",
+          "message": "file uses the version 2 schema; parser acq-csv@1 refuses it"
+        }
+      ]
+    }
+  },
+  "suggestions": [
+    {
+      "expectationId": "exp-9101",
+      "recordId": "rec-f-d3cd39b8eb3d-52",
+      "score": 1,
+      "basis": "net within 0 minor units and 0 day(s)"
+    },
+    {
+      "expectationId": "exp-9101",
+      "recordId": "rec-f-5258d95229ad-52",
+      "score": 0.591,
+      "basis": "net within 24245 minor units and 1 day(s)"
+    }
+  ],
+  "replay": {
+    "identicalExplanations": true,
+    "identicalInstructions": true
+  },
+  "audit": {
+    "caseId": "case-0001",
+    "history": [
+      {
+        "at": 1773187200000,
+        "actor": "finance-ops/reviewer-2",
+        "action": "ACCEPT_PROVIDER_FEE",
+        "note": "provider fee schedule changed on 2026-03-01; internal expectation not updated",
+        "evidenceDigest": "a3e93a05f117d590"
+      }
+    ],
+    "rawDigestsUnchanged": true
+  },
+  "negativeControls": [
+    {
+      "id": "C1",
+      "label": "ingest a re-delivered file again instead of recognising its digest",
+      "broke": [
+        "P1_DUPLICATE_FILE_IGNORED",
+        "P2_NAME_COLLISION_REFUSED",
+        "P9_EXCEPTION_COUNT",
+        "P8_PROVIDER_SIDE_PARTITIONED"
+      ],
+      "expected": [
+        "P1_DUPLICATE_FILE_IGNORED",
+        "P9_EXCEPTION_COUNT"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C2",
+      "label": "let a file overwrite an earlier one that shares its name",
+      "broke": [
+        "P2_NAME_COLLISION_REFUSED",
+        "P9_EXCEPTION_COUNT"
+      ],
+      "expected": [
+        "P2_NAME_COLLISION_REFUSED"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C3",
+      "label": "ignore a declared correction and keep both versions live",
+      "broke": [
+        "P3_CORRECTION_SUPERSEDES",
+        "P9_EXCEPTION_COUNT"
+      ],
+      "expected": [
+        "P3_CORRECTION_SUPERSEDES"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C4",
+      "label": "compare amounts without comparing currency",
+      "broke": [
+        "P4_CURRENCY_IS_PART_OF_IDENTITY",
+        "P5_CONSERVATION",
+        "P9_EXCEPTION_COUNT"
+      ],
+      "expected": [
+        "P4_CURRENCY_IS_PART_OF_IDENTITY"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C5",
+      "label": "absorb a within-tolerance difference instead of recording it",
+      "broke": [
+        "P5_CONSERVATION"
+      ],
+      "expected": [
+        "P5_CONSERVATION"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C6",
+      "label": "post a settlement on a match alone, with no bank confirmation",
+      "broke": [
+        "P6_NO_POSTING_WITHOUT_CONFIRMATION"
+      ],
+      "expected": [
+        "P6_NO_POSTING_WITHOUT_CONFIRMATION"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C7",
+      "label": "post straight from the parsed file, skipping the posting decision",
+      "broke": [
+        "P6_NO_POSTING_WITHOUT_CONFIRMATION",
+        "P7_POSTINGS_FOLLOW_THE_MATCH"
+      ],
+      "expected": [
+        "P7_POSTINGS_FOLLOW_THE_MATCH"
+      ],
+      "informative": true,
+      "ok": true
+    },
+    {
+      "id": "C8",
+      "label": "all seven at once — reddens everything and therefore shows nothing",
+      "broke": [
+        "P1_DUPLICATE_FILE_IGNORED",
+        "P2_NAME_COLLISION_REFUSED",
+        "P3_CORRECTION_SUPERSEDES",
+        "P4_CURRENCY_IS_PART_OF_IDENTITY",
+        "P5_CONSERVATION",
+        "P6_NO_POSTING_WITHOUT_CONFIRMATION",
+        "P7_POSTINGS_FOLLOW_THE_MATCH",
+        "P9_EXCEPTION_COUNT",
+        "P8_PROVIDER_SIDE_PARTITIONED"
+      ],
+      "expected": [],
+      "informative": false,
+      "ok": true
+    }
+  ],
+  "probes": [
+    {
+      "id": "P1_DUPLICATE_FILE_IGNORED",
+      "what": "a byte-identical re-delivery is recorded and not re-ingested",
+      "holds": true
+    },
+    {
+      "id": "P2_NAME_COLLISION_REFUSED",
+      "what": "a file reusing a name with different bytes is a conflict, not an overwrite",
+      "holds": true
+    },
+    {
+      "id": "P3_CORRECTION_SUPERSEDES",
+      "what": "a declared correction retires exactly one earlier file",
+      "holds": true
+    },
+    {
+      "id": "P4_CURRENCY_IS_PART_OF_IDENTITY",
+      "what": "an amount reported in another currency is an exception, not a match",
+      "holds": true
+    },
+    {
+      "id": "P5_CONSERVATION",
+      "what": "every internal row: expected net equals settled net plus residual",
+      "holds": true
+    },
+    {
+      "id": "P6_NO_POSTING_WITHOUT_CONFIRMATION",
+      "what": "with no bank statement, nothing posts as settlement",
+      "holds": true
+    },
+    {
+      "id": "P7_POSTINGS_FOLLOW_THE_MATCH",
+      "what": "the posted total equals the expected net of the rows a rule matched",
+      "holds": true
+    },
+    {
+      "id": "P9_EXCEPTION_COUNT",
+      "what": "the corpus raises exactly seven exception cases",
+      "holds": true
+    },
+    {
+      "id": "P8_PROVIDER_SIDE_PARTITIONED",
+      "what": "every minor unit in a live provider file is attributed or named unattributed",
+      "holds": true
+    }
+  ]
+}

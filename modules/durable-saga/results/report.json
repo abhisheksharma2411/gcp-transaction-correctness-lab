@@ -1,0 +1,1051 @@
+{
+  "module": "durable-saga",
+  "label": "Simulated result",
+  "definition": {
+    "version1": {
+      "steps": 6,
+      "pivot": "capture_payment",
+      "checks": [
+        {
+          "check": "exactly-one-pivot",
+          "ok": true,
+          "detail": "pivot is capture_payment"
+        },
+        {
+          "check": "nothing-after-the-pivot-is-compensated",
+          "ok": true,
+          "detail": "every step after the pivot is retried, not undone"
+        },
+        {
+          "check": "irreversible-steps-sit-after-the-pivot",
+          "ok": true,
+          "detail": "no irreversible effect is produced while the saga can still be undone"
+        },
+        {
+          "check": "step-names-unique",
+          "ok": true,
+          "detail": "6 distinct steps"
+        },
+        {
+          "check": "every-state-reachable",
+          "ok": true,
+          "detail": "all states have an inbound transition"
+        },
+        {
+          "check": "terminal-states-are-sinks",
+          "ok": true,
+          "detail": "nothing leaves a terminal state"
+        },
+        {
+          "check": "stopped-states-name-an-owner",
+          "ok": true,
+          "detail": "every state only an operator can leave names the operator"
+        }
+      ]
+    },
+    "version2": {
+      "steps": 6,
+      "pivot": "capture_payment",
+      "checks": [
+        {
+          "check": "exactly-one-pivot",
+          "ok": true,
+          "detail": "pivot is capture_payment"
+        },
+        {
+          "check": "nothing-after-the-pivot-is-compensated",
+          "ok": true,
+          "detail": "every step after the pivot is retried, not undone"
+        },
+        {
+          "check": "irreversible-steps-sit-after-the-pivot",
+          "ok": true,
+          "detail": "no irreversible effect is produced while the saga can still be undone"
+        },
+        {
+          "check": "step-names-unique",
+          "ok": true,
+          "detail": "6 distinct steps"
+        },
+        {
+          "check": "every-state-reachable",
+          "ok": true,
+          "detail": "all states have an inbound transition"
+        },
+        {
+          "check": "terminal-states-are-sinks",
+          "ok": true,
+          "detail": "nothing leaves a terminal state"
+        },
+        {
+          "check": "stopped-states-name-an-owner",
+          "ok": true,
+          "detail": "every state only an operator can leave names the operator"
+        }
+      ]
+    },
+    "specControls": [
+      {
+        "mutation": "two-pivots",
+        "failed": [
+          "exactly-one-pivot"
+        ],
+        "caught": true
+      },
+      {
+        "mutation": "compensation-after-pivot",
+        "failed": [
+          "nothing-after-the-pivot-is-compensated"
+        ],
+        "caught": true
+      },
+      {
+        "mutation": "irreversible-before-pivot",
+        "failed": [
+          "irreversible-steps-sit-after-the-pivot"
+        ],
+        "caught": true
+      },
+      {
+        "mutation": "terminal-state-with-an-exit",
+        "failed": [
+          "terminal-states-are-sinks"
+        ],
+        "caught": true
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "S1",
+      "title": "Every participant says yes",
+      "covers": "the whole chain, and that an irreversible step sits after the pivot",
+      "finalState": "COMPLETED",
+      "verdict": "COMPLETED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 6,
+      "compensations": 0,
+      "refusals": [],
+      "historyLength": 16
+    },
+    {
+      "id": "S2",
+      "title": "A compensable step is refused",
+      "covers": "failure before the pivot, and the compensation chain in reverse order",
+      "finalState": "COMPENSATED",
+      "verdict": "COMPENSATED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 1,
+      "compensations": 1,
+      "refusals": [],
+      "historyLength": 11
+    },
+    {
+      "id": "S3",
+      "title": "Failure before any durable effect",
+      "covers": "the first step refusing, which leaves nothing to compensate",
+      "finalState": "COMPENSATED",
+      "verdict": "COMPENSATED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 0,
+      "compensations": 0,
+      "refusals": [],
+      "historyLength": 7
+    },
+    {
+      "id": "S4",
+      "title": "The carrier answers after the saga gave up",
+      "covers": "a delayed callback arriving once compensation has already run",
+      "finalState": "COMPENSATED",
+      "verdict": "COMPENSATED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 2,
+      "compensations": 2,
+      "refusals": [
+        "NO_WAIT_OUTSTANDING"
+      ],
+      "historyLength": 19
+    },
+    {
+      "id": "S5",
+      "title": "Cancellation loses the race",
+      "covers": "a cancellation arriving after the pivot committed, and being refused",
+      "finalState": "COMPLETED",
+      "verdict": "COMPLETED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 6,
+      "compensations": 0,
+      "refusals": [
+        "CANCEL_LOST_THE_RACE"
+      ],
+      "historyLength": 18
+    },
+    {
+      "id": "S6",
+      "title": "The orchestrator dies mid-pivot",
+      "covers": "a restart between the participant acting and the answer being recorded",
+      "finalState": "COMPLETED",
+      "verdict": "COMPLETED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 1,
+      "effects": 6,
+      "compensations": 0,
+      "refusals": [],
+      "historyLength": 18
+    },
+    {
+      "id": "S7",
+      "title": "A compensation fails, then an operator retries it",
+      "covers": "compensation exhaustion, the state a person owns, and a resumed chain",
+      "finalState": "COMPENSATED",
+      "verdict": "COMPENSATED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 3,
+      "compensations": 3,
+      "refusals": [],
+      "historyLength": 28
+    },
+    {
+      "id": "S8",
+      "title": "A step after the pivot runs out of attempts",
+      "covers": "manual repair resuming rather than replaying committed work",
+      "finalState": "COMPLETED",
+      "verdict": "COMPLETED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 6,
+      "compensations": 0,
+      "refusals": [],
+      "historyLength": 28
+    },
+    {
+      "id": "S9",
+      "title": "The answer is lost, not the work",
+      "covers": "an unknown outcome resolved by asking the participant what it recorded",
+      "finalState": "COMPLETED",
+      "verdict": "COMPLETED",
+      "agreed": true,
+      "disagreement": null,
+      "restarts": 0,
+      "effects": 6,
+      "compensations": 0,
+      "refusals": [],
+      "historyLength": 17
+    }
+  ],
+  "matrix": {
+    "rows": 39,
+    "injections": [
+      "reject",
+      "error",
+      "error-repeated",
+      "lost",
+      "crash",
+      "predispatch"
+    ],
+    "outcomes": {
+      "COMPLETED": 24,
+      "COMPENSATED": 8,
+      "MANUAL": 7,
+      "PENDING": 0
+    },
+    "disagreements": 0,
+    "duplicateEffects": 0,
+    "detail": [
+      {
+        "step": "reserve_stock",
+        "direction": "forward",
+        "injection": "reject",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "reserve_stock",
+        "direction": "forward",
+        "injection": "error",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "reserve_stock",
+        "direction": "forward",
+        "injection": "error-repeated",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "reserve_stock",
+        "direction": "forward",
+        "injection": "lost",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "reserve_stock",
+        "direction": "forward",
+        "injection": "crash",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "reserve_stock",
+        "direction": "forward",
+        "injection": "predispatch",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "authorize_payment",
+        "direction": "forward",
+        "injection": "reject",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "authorize_payment",
+        "direction": "forward",
+        "injection": "error",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "authorize_payment",
+        "direction": "forward",
+        "injection": "error-repeated",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "authorize_payment",
+        "direction": "forward",
+        "injection": "lost",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "authorize_payment",
+        "direction": "forward",
+        "injection": "crash",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "authorize_payment",
+        "direction": "forward",
+        "injection": "predispatch",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "book_shipment",
+        "direction": "forward",
+        "injection": "reject",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "book_shipment",
+        "direction": "forward",
+        "injection": "error",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "book_shipment",
+        "direction": "forward",
+        "injection": "error-repeated",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "book_shipment",
+        "direction": "forward",
+        "injection": "lost",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "book_shipment",
+        "direction": "forward",
+        "injection": "crash",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "book_shipment",
+        "direction": "forward",
+        "injection": "predispatch",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "capture_payment",
+        "direction": "forward",
+        "injection": "reject",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "capture_payment",
+        "direction": "forward",
+        "injection": "error",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "capture_payment",
+        "direction": "forward",
+        "injection": "error-repeated",
+        "finalState": "COMPENSATED",
+        "outcome": "COMPENSATED",
+        "verdict": "COMPENSATED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "capture_payment",
+        "direction": "forward",
+        "injection": "lost",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "capture_payment",
+        "direction": "forward",
+        "injection": "crash",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "capture_payment",
+        "direction": "forward",
+        "injection": "predispatch",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "post_ledger_entry",
+        "direction": "forward",
+        "injection": "reject",
+        "finalState": "MANUAL_REPAIR",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "post_ledger_entry",
+        "direction": "forward",
+        "injection": "error",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "post_ledger_entry",
+        "direction": "forward",
+        "injection": "error-repeated",
+        "finalState": "MANUAL_REPAIR",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "post_ledger_entry",
+        "direction": "forward",
+        "injection": "lost",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "post_ledger_entry",
+        "direction": "forward",
+        "injection": "crash",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "post_ledger_entry",
+        "direction": "forward",
+        "injection": "predispatch",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "send_confirmation",
+        "direction": "forward",
+        "injection": "reject",
+        "finalState": "MANUAL_REPAIR",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "send_confirmation",
+        "direction": "forward",
+        "injection": "error",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "send_confirmation",
+        "direction": "forward",
+        "injection": "error-repeated",
+        "finalState": "MANUAL_REPAIR",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "send_confirmation",
+        "direction": "forward",
+        "injection": "lost",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "send_confirmation",
+        "direction": "forward",
+        "injection": "crash",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "send_confirmation",
+        "direction": "forward",
+        "injection": "predispatch",
+        "finalState": "COMPLETED",
+        "outcome": "COMPLETED",
+        "verdict": "COMPLETED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "capture_payment",
+          "post_ledger_entry",
+          "reserve_stock",
+          "send_confirmation"
+        ],
+        "restarts": 1,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "release_stock",
+        "direction": "compensate",
+        "injection": "reject",
+        "finalState": "COMPENSATION_FAILED",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "void_authorization",
+        "direction": "compensate",
+        "injection": "reject",
+        "finalState": "COMPENSATION_FAILED",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      },
+      {
+        "step": "cancel_shipment",
+        "direction": "compensate",
+        "injection": "reject",
+        "finalState": "COMPENSATION_FAILED",
+        "outcome": "MANUAL",
+        "verdict": "UNRESOLVED",
+        "agreed": true,
+        "disagreement": null,
+        "liveEffects": [
+          "authorize_payment",
+          "book_shipment",
+          "reserve_stock"
+        ],
+        "restarts": 0,
+        "duplicateEffects": 0
+      }
+    ]
+  },
+  "controls": [
+    {
+      "mutation": "no-step-dedupe",
+      "intent": "participants stop de-duplicating on the command id",
+      "probe": "the orchestrator dies after the pivot and retries it",
+      "expected": "a DUPLICATE_EFFECT appears in the participants' ledgers",
+      "baseline": "COMPLETED / COMPLETED / agree / — / — / 6 effects",
+      "mutated": "COMPLETED / COMPLETED / DISAGREE / DUPLICATE_EFFECT / — / 7 effects",
+      "changed": true
+    },
+    {
+      "mutation": "compensate-only-confirmed",
+      "intent": "the chain skips a step that was dispatched but never answered",
+      "probe": "a cancellation while the carrier has not yet answered",
+      "expected": "the carrier books a shipment the saga believes it compensated, and the auditor disagrees",
+      "baseline": "COMPENSATED / COMPENSATED / agree / — / NO_WAIT_OUTSTANDING / 2 effects",
+      "mutated": "COMPENSATED / UNRESOLVED / DISAGREE / — / NO_WAIT_OUTSTANDING / 3 effects",
+      "changed": true
+    },
+    {
+      "mutation": "forward-compensation-order",
+      "intent": "compensations run in the order the steps ran",
+      "probe": "the pivot is refused after a shipment has been booked",
+      "expected": "inventory refuses to release units a live shipment depends on, and the chain stops",
+      "baseline": "COMPENSATED / COMPENSATED / agree / — / — / 3 effects",
+      "mutated": "COMPENSATION_FAILED / UNRESOLVED / agree / — / — / 3 effects",
+      "changed": true
+    },
+    {
+      "mutation": "no-wait-correlation",
+      "intent": "callbacks are accepted with no outstanding wait to satisfy",
+      "probe": "the carrier answers after the saga stopped waiting",
+      "expected": "the NO_WAIT_OUTSTANDING refusal disappears",
+      "baseline": "COMPENSATED / COMPENSATED / agree / — / NO_WAIT_OUTSTANDING / 2 effects",
+      "mutated": "COMPENSATED / COMPENSATED / agree / — / — / 2 effects",
+      "changed": true
+    },
+    {
+      "mutation": "no-pivot-cancel-check",
+      "intent": "a cancellation is accepted after the pivot committed",
+      "probe": "a cancellation in flight while the pivot commits",
+      "expected": "a committed saga starts compensating and cannot void a captured payment",
+      "baseline": "COMPLETED / COMPLETED / agree / — / CANCEL_LOST_THE_RACE / 6 effects",
+      "mutated": "COMPENSATION_FAILED / UNRESOLVED / DISAGREE / COMPENSATED_AFTER_PIVOT / — / 4 effects",
+      "changed": true
+    },
+    {
+      "mutation": "compensate-with-current-spec",
+      "intent": "compensations are looked up in the current definition rather than the pinned one",
+      "probe": "a version 1 saga compensating a step version 2 has deleted",
+      "expected": "the compensation for a deleted step cannot be found",
+      "baseline": "COMPENSATED / COMPENSATED / agree / — / — / 3 effects",
+      "mutated": "COMPENSATION_FAILED / UNRESOLVED / agree / — / — / 3 effects",
+      "changed": true
+    },
+    {
+      "mutation": "no-attempt-cap",
+      "intent": "nothing bounds how many times a compensation is retried",
+      "probe": "a compensation the participant will never accept",
+      "expected": "the saga never leaves COMPENSATING",
+      "baseline": "COMPENSATION_FAILED / UNRESOLVED / agree / — / — / 3 effects",
+      "mutated": "COMPENSATING / UNRESOLVED / agree / — / — / 3 effects",
+      "changed": true
+    },
+    {
+      "mutation": "orchestrator-forgets-compensation",
+      "intent": "the saga record claims a compensation that was never sent",
+      "probe": "the pivot is refused and the chain runs",
+      "expected": "the saga claims COMPENSATED while the ledgers show the effects are live",
+      "baseline": "COMPENSATED / COMPENSATED / agree / — / — / 3 effects",
+      "mutated": "COMPENSATED / UNRESOLVED / DISAGREE / — / — / 3 effects",
+      "changed": true
+    }
+  ]
+}

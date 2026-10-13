@@ -1,0 +1,3146 @@
+[
+  {
+    "subject": "dep-001",
+    "side": "BANK",
+    "outcome": "MATCHED",
+    "rule": null,
+    "reason": null,
+    "amount": "5634.76",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "bt-01"
+    ],
+    "evidence": [
+      "f-cb6ffd6818ac#1",
+      "f-e3d80387f00b:bt-01"
+    ],
+    "because": "dep-001 settles bt-01 at the stated net"
+  },
+  {
+    "subject": "dep-002",
+    "side": "BANK",
+    "outcome": "MATCHED",
+    "rule": null,
+    "reason": null,
+    "amount": "12716.42",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "bt-02",
+      "bt-03"
+    ],
+    "evidence": [
+      "f-cb6ffd6818ac#2",
+      "f-e3d80387f00b:bt-02",
+      "f-b73ec02ee60c:bt-03"
+    ],
+    "because": "dep-002 settles bt-02 and bt-03 at the stated net"
+  },
+  {
+    "subject": "dep-003",
+    "side": "BANK",
+    "outcome": "MATCHED",
+    "rule": null,
+    "reason": null,
+    "amount": "-2061.37",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "bt-04"
+    ],
+    "evidence": [
+      "f-cb6ffd6818ac#3",
+      "f-b73ec02ee60c:bt-04"
+    ],
+    "because": "dep-003 settles bt-04 at the stated net"
+  },
+  {
+    "subject": "exp-0001",
+    "side": "INTERNAL",
+    "outcome": "MATCHED_WITH_ADJUSTMENT",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "45.44",
+    "currency": "USD",
+    "residual": "0.01",
+    "counterparts": [
+      "rec-f-9cc20067145e-2"
+    ],
+    "evidence": [
+      "f-9cc20067145e#2"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0001 settles exp-0001; fee differs by 1, within tolerance 2, residual recorded"
+  },
+  {
+    "subject": "exp-0002",
+    "side": "INTERNAL",
+    "outcome": "MATCHED_WITH_ADJUSTMENT",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "122.38",
+    "currency": "USD",
+    "residual": "-0.01",
+    "counterparts": [
+      "rec-f-9cc20067145e-3"
+    ],
+    "evidence": [
+      "f-9cc20067145e#3"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0002 settles exp-0002; fee differs by -1, within tolerance 2, residual recorded"
+  },
+  {
+    "subject": "exp-0003",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "204.17",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-4"
+    ],
+    "evidence": [
+      "f-9cc20067145e#4"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0003 settles exp-0003 at the expected fee"
+  },
+  {
+    "subject": "exp-0004",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "16.30",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-5"
+    ],
+    "evidence": [
+      "f-9cc20067145e#5"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0004 settles exp-0004 at the expected fee"
+  },
+  {
+    "subject": "exp-0005",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "92.38",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-6"
+    ],
+    "evidence": [
+      "f-9cc20067145e#6"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0005 settles exp-0005 at the expected fee"
+  },
+  {
+    "subject": "exp-0006",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "78.00",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-7"
+    ],
+    "evidence": [
+      "f-9cc20067145e#7"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0006 settles exp-0006 at the expected fee"
+  },
+  {
+    "subject": "exp-0007",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "32.74",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-8"
+    ],
+    "evidence": [
+      "f-9cc20067145e#8"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0007 settles exp-0007 at the expected fee"
+  },
+  {
+    "subject": "exp-0008",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "218.33",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-9"
+    ],
+    "evidence": [
+      "f-9cc20067145e#9"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0008 settles exp-0008 at the expected fee"
+  },
+  {
+    "subject": "exp-0009",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "97.55",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-10"
+    ],
+    "evidence": [
+      "f-9cc20067145e#10"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0009 settles exp-0009 at the expected fee"
+  },
+  {
+    "subject": "exp-0010",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "96.66",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-11"
+    ],
+    "evidence": [
+      "f-9cc20067145e#11"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0010 settles exp-0010 at the expected fee"
+  },
+  {
+    "subject": "exp-0011",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "45.15",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-12"
+    ],
+    "evidence": [
+      "f-9cc20067145e#12"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0011 settles exp-0011 at the expected fee"
+  },
+  {
+    "subject": "exp-0012",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "183.42",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-13"
+    ],
+    "evidence": [
+      "f-9cc20067145e#13"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0012 settles exp-0012 at the expected fee"
+  },
+  {
+    "subject": "exp-0013",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "221.05",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-14"
+    ],
+    "evidence": [
+      "f-9cc20067145e#14"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0013 settles exp-0013 at the expected fee"
+  },
+  {
+    "subject": "exp-0014",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "135.31",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-15"
+    ],
+    "evidence": [
+      "f-9cc20067145e#15"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0014 settles exp-0014 at the expected fee"
+  },
+  {
+    "subject": "exp-0015",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "92.20",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-16"
+    ],
+    "evidence": [
+      "f-9cc20067145e#16"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0015 settles exp-0015 at the expected fee"
+  },
+  {
+    "subject": "exp-0016",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "109.83",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-17"
+    ],
+    "evidence": [
+      "f-9cc20067145e#17"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0016 settles exp-0016 at the expected fee"
+  },
+  {
+    "subject": "exp-0017",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "219.81",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-18"
+    ],
+    "evidence": [
+      "f-9cc20067145e#18"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0017 settles exp-0017 at the expected fee"
+  },
+  {
+    "subject": "exp-0018",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "116.99",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-19"
+    ],
+    "evidence": [
+      "f-9cc20067145e#19"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0018 settles exp-0018 at the expected fee"
+  },
+  {
+    "subject": "exp-0019",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "190.91",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-20"
+    ],
+    "evidence": [
+      "f-9cc20067145e#20"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0019 settles exp-0019 at the expected fee"
+  },
+  {
+    "subject": "exp-0020",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "22.33",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-21"
+    ],
+    "evidence": [
+      "f-9cc20067145e#21"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0020 settles exp-0020 at the expected fee"
+  },
+  {
+    "subject": "exp-0021",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "72.84",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-22"
+    ],
+    "evidence": [
+      "f-9cc20067145e#22"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0021 settles exp-0021 at the expected fee"
+  },
+  {
+    "subject": "exp-0022",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "82.03",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-23"
+    ],
+    "evidence": [
+      "f-9cc20067145e#23"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0022 settles exp-0022 at the expected fee"
+  },
+  {
+    "subject": "exp-0023",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "134.25",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-24"
+    ],
+    "evidence": [
+      "f-9cc20067145e#24"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0023 settles exp-0023 at the expected fee"
+  },
+  {
+    "subject": "exp-0024",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "221.45",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-25"
+    ],
+    "evidence": [
+      "f-9cc20067145e#25"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0024 settles exp-0024 at the expected fee"
+  },
+  {
+    "subject": "exp-0025",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "74.24",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-26"
+    ],
+    "evidence": [
+      "f-9cc20067145e#26"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0025 settles exp-0025 at the expected fee"
+  },
+  {
+    "subject": "exp-0026",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "200.25",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-27"
+    ],
+    "evidence": [
+      "f-9cc20067145e#27"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0026 settles exp-0026 at the expected fee"
+  },
+  {
+    "subject": "exp-0027",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "27.48",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-28"
+    ],
+    "evidence": [
+      "f-9cc20067145e#28"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0027 settles exp-0027 at the expected fee"
+  },
+  {
+    "subject": "exp-0028",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "101.06",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-29"
+    ],
+    "evidence": [
+      "f-9cc20067145e#29"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0028 settles exp-0028 at the expected fee"
+  },
+  {
+    "subject": "exp-0029",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "55.72",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-30"
+    ],
+    "evidence": [
+      "f-9cc20067145e#30"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0029 settles exp-0029 at the expected fee"
+  },
+  {
+    "subject": "exp-0030",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "52.76",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-31"
+    ],
+    "evidence": [
+      "f-9cc20067145e#31"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0030 settles exp-0030 at the expected fee"
+  },
+  {
+    "subject": "exp-0031",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "15.38",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-32"
+    ],
+    "evidence": [
+      "f-9cc20067145e#32"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0031 settles exp-0031 at the expected fee"
+  },
+  {
+    "subject": "exp-0032",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "125.86",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-33"
+    ],
+    "evidence": [
+      "f-9cc20067145e#33"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0032 settles exp-0032 at the expected fee"
+  },
+  {
+    "subject": "exp-0033",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "76.56",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-34"
+    ],
+    "evidence": [
+      "f-9cc20067145e#34"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0033 settles exp-0033 at the expected fee"
+  },
+  {
+    "subject": "exp-0034",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "220.63",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-35"
+    ],
+    "evidence": [
+      "f-9cc20067145e#35"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0034 settles exp-0034 at the expected fee"
+  },
+  {
+    "subject": "exp-0035",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "140.72",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-36"
+    ],
+    "evidence": [
+      "f-9cc20067145e#36"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0035 settles exp-0035 at the expected fee"
+  },
+  {
+    "subject": "exp-0036",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "162.45",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-37"
+    ],
+    "evidence": [
+      "f-9cc20067145e#37"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0036 settles exp-0036 at the expected fee"
+  },
+  {
+    "subject": "exp-0037",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "221.00",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-38"
+    ],
+    "evidence": [
+      "f-9cc20067145e#38"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0037 settles exp-0037 at the expected fee"
+  },
+  {
+    "subject": "exp-0038",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "236.57",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-39"
+    ],
+    "evidence": [
+      "f-9cc20067145e#39"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0038 settles exp-0038 at the expected fee"
+  },
+  {
+    "subject": "exp-0039",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "144.40",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-40"
+    ],
+    "evidence": [
+      "f-9cc20067145e#40"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0039 settles exp-0039 at the expected fee"
+  },
+  {
+    "subject": "exp-0040",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "26.11",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-41"
+    ],
+    "evidence": [
+      "f-9cc20067145e#41"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0040 settles exp-0040 at the expected fee"
+  },
+  {
+    "subject": "exp-0041",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "56.45",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-42"
+    ],
+    "evidence": [
+      "f-9cc20067145e#42"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0041 settles exp-0041 at the expected fee"
+  },
+  {
+    "subject": "exp-0042",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "99.58",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-43"
+    ],
+    "evidence": [
+      "f-9cc20067145e#43"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0042 settles exp-0042 at the expected fee"
+  },
+  {
+    "subject": "exp-0043",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "28.80",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-44"
+    ],
+    "evidence": [
+      "f-9cc20067145e#44"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0043 settles exp-0043 at the expected fee"
+  },
+  {
+    "subject": "exp-0044",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "76.19",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-45"
+    ],
+    "evidence": [
+      "f-9cc20067145e#45"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0044 settles exp-0044 at the expected fee"
+  },
+  {
+    "subject": "exp-0045",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "31.47",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-46"
+    ],
+    "evidence": [
+      "f-9cc20067145e#46"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0045 settles exp-0045 at the expected fee"
+  },
+  {
+    "subject": "exp-0046",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "241.87",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-47"
+    ],
+    "evidence": [
+      "f-9cc20067145e#47"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0046 settles exp-0046 at the expected fee"
+  },
+  {
+    "subject": "exp-0047",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "124.23",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-48"
+    ],
+    "evidence": [
+      "f-9cc20067145e#48"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0047 settles exp-0047 at the expected fee"
+  },
+  {
+    "subject": "exp-0048",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "228.13",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-49"
+    ],
+    "evidence": [
+      "f-9cc20067145e#49"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0048 settles exp-0048 at the expected fee"
+  },
+  {
+    "subject": "exp-0049",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-8.57",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-50"
+    ],
+    "evidence": [
+      "f-9cc20067145e#50"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0049 settles exp-0049 at the expected fee"
+  },
+  {
+    "subject": "exp-0050",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-49.72",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-51"
+    ],
+    "evidence": [
+      "f-9cc20067145e#51"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0050 settles exp-0050 at the expected fee"
+  },
+  {
+    "subject": "exp-0051",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-64.59",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-52"
+    ],
+    "evidence": [
+      "f-9cc20067145e#52"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0051 settles exp-0051 at the expected fee"
+  },
+  {
+    "subject": "exp-0052",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-36.27",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-53"
+    ],
+    "evidence": [
+      "f-9cc20067145e#53"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0052 settles exp-0052 at the expected fee"
+  },
+  {
+    "subject": "exp-0053",
+    "side": "INTERNAL",
+    "outcome": "EXCEPTION",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": "FEE_VARIANCE_BEYOND_TOLERANCE",
+    "amount": "226.03",
+    "currency": "USD",
+    "residual": "1.20",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-2"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#2"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0053 settles exp-0053; fee differs by 120, beyond tolerance 2"
+  },
+  {
+    "subject": "exp-0054",
+    "side": "INTERNAL",
+    "outcome": "EXCEPTION",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": "FEE_VARIANCE_BEYOND_TOLERANCE",
+    "amount": "22.43",
+    "currency": "USD",
+    "residual": "-1.20",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-3"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#3"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0054 settles exp-0054; fee differs by -120, beyond tolerance 2"
+  },
+  {
+    "subject": "exp-0055",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "85.04",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-4"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#4"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0055 settles exp-0055 at the expected fee"
+  },
+  {
+    "subject": "exp-0056",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "152.50",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-5"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#5"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0056 settles exp-0056 at the expected fee"
+  },
+  {
+    "subject": "exp-0057",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "121.10",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-6"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#6"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0057 settles exp-0057 at the expected fee"
+  },
+  {
+    "subject": "exp-0058",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "5.05",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-7"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#7"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0058 settles exp-0058 at the expected fee"
+  },
+  {
+    "subject": "exp-0059",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "128.44",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-8"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#8"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0059 settles exp-0059 at the expected fee"
+  },
+  {
+    "subject": "exp-0060",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "156.49",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-9"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#9"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0060 settles exp-0060 at the expected fee"
+  },
+  {
+    "subject": "exp-0061",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "119.61",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-10"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#10"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0061 settles exp-0061 at the expected fee"
+  },
+  {
+    "subject": "exp-0062",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "223.57",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-11"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#11"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0062 settles exp-0062 at the expected fee"
+  },
+  {
+    "subject": "exp-0063",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "188.41",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-12"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#12"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0063 settles exp-0063 at the expected fee"
+  },
+  {
+    "subject": "exp-0064",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "215.79",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-13"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#13"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0064 settles exp-0064 at the expected fee"
+  },
+  {
+    "subject": "exp-0065",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "194.03",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-14"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#14"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0065 settles exp-0065 at the expected fee"
+  },
+  {
+    "subject": "exp-0066",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "126.29",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-15"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#15"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0066 settles exp-0066 at the expected fee"
+  },
+  {
+    "subject": "exp-0067",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "44.83",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-16"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#16"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0067 settles exp-0067 at the expected fee"
+  },
+  {
+    "subject": "exp-0068",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "195.41",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-17"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#17"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0068 settles exp-0068 at the expected fee"
+  },
+  {
+    "subject": "exp-0069",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "92.31",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-18"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#18"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0069 settles exp-0069 at the expected fee"
+  },
+  {
+    "subject": "exp-0070",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "45.18",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-19"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#19"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0070 settles exp-0070 at the expected fee"
+  },
+  {
+    "subject": "exp-0071",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "205.95",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-20"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#20"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0071 settles exp-0071 at the expected fee"
+  },
+  {
+    "subject": "exp-0072",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "158.27",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-21"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#21"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0072 settles exp-0072 at the expected fee"
+  },
+  {
+    "subject": "exp-0073",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "84.24",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-22"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#22"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0073 settles exp-0073 at the expected fee"
+  },
+  {
+    "subject": "exp-0074",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "184.92",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-23"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#23"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0074 settles exp-0074 at the expected fee"
+  },
+  {
+    "subject": "exp-0075",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "87.16",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-24"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#24"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0075 settles exp-0075 at the expected fee"
+  },
+  {
+    "subject": "exp-0076",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "174.30",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-25"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#25"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0076 settles exp-0076 at the expected fee"
+  },
+  {
+    "subject": "exp-0077",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "227.54",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-26"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#26"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0077 settles exp-0077 at the expected fee"
+  },
+  {
+    "subject": "exp-0078",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "234.59",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-27"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#27"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0078 settles exp-0078 at the expected fee"
+  },
+  {
+    "subject": "exp-0079",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "123.74",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-28"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#28"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0079 settles exp-0079 at the expected fee"
+  },
+  {
+    "subject": "exp-0080",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "241.36",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-29"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#29"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0080 settles exp-0080 at the expected fee"
+  },
+  {
+    "subject": "exp-0081",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "16.20",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-30"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#30"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0081 settles exp-0081 at the expected fee"
+  },
+  {
+    "subject": "exp-0082",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "22.44",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-31"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#31"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0082 settles exp-0082 at the expected fee"
+  },
+  {
+    "subject": "exp-0083",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "193.52",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-32"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#32"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0083 settles exp-0083 at the expected fee"
+  },
+  {
+    "subject": "exp-0084",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "172.95",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-33"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#33"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0084 settles exp-0084 at the expected fee"
+  },
+  {
+    "subject": "exp-0085",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "94.93",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-34"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#34"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0085 settles exp-0085 at the expected fee"
+  },
+  {
+    "subject": "exp-0086",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "27.73",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-35"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#35"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0086 settles exp-0086 at the expected fee"
+  },
+  {
+    "subject": "exp-0087",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "107.55",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-36"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#36"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0087 settles exp-0087 at the expected fee"
+  },
+  {
+    "subject": "exp-0088",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "80.83",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-37"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#37"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0088 settles exp-0088 at the expected fee"
+  },
+  {
+    "subject": "exp-0089",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "170.13",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-38"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#38"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0089 settles exp-0089 at the expected fee"
+  },
+  {
+    "subject": "exp-0090",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "147.50",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-39"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#39"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0090 settles exp-0090 at the expected fee"
+  },
+  {
+    "subject": "exp-0091",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "135.28",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-40"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#40"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0091 settles exp-0091 at the expected fee"
+  },
+  {
+    "subject": "exp-0092",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "237.24",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-41"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#41"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0092 settles exp-0092 at the expected fee"
+  },
+  {
+    "subject": "exp-0093",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "154.17",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-42"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#42"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0093 settles exp-0093 at the expected fee"
+  },
+  {
+    "subject": "exp-0094",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "171.73",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-43"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#43"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0094 settles exp-0094 at the expected fee"
+  },
+  {
+    "subject": "exp-0095",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "66.48",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-44"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#44"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0095 settles exp-0095 at the expected fee"
+  },
+  {
+    "subject": "exp-0096",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "111.91",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-45"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#45"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0096 settles exp-0096 at the expected fee"
+  },
+  {
+    "subject": "exp-0097",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "219.80",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-46"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#46"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0097 settles exp-0097 at the expected fee"
+  },
+  {
+    "subject": "exp-0098",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "7.80",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-47"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#47"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0098 settles exp-0098 at the expected fee"
+  },
+  {
+    "subject": "exp-0099",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-49.47",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-48"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#48"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0099 settles exp-0099 at the expected fee"
+  },
+  {
+    "subject": "exp-0100",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-6.19",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-49"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#49"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0100 settles exp-0100 at the expected fee"
+  },
+  {
+    "subject": "exp-0101",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-10.97",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-50"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#50"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0101 settles exp-0101 at the expected fee"
+  },
+  {
+    "subject": "exp-0102",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-51.15",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-d3cd39b8eb3d-51"
+    ],
+    "evidence": [
+      "f-d3cd39b8eb3d#51"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0102 settles exp-0102 at the expected fee"
+  },
+  {
+    "subject": "exp-0103",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "4.74",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-1"
+    ],
+    "evidence": [
+      "f-5258d95229ad#1"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0103 settles exp-0103 at the expected fee"
+  },
+  {
+    "subject": "exp-0104",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "214.31",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-2"
+    ],
+    "evidence": [
+      "f-5258d95229ad#2"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0104 settles exp-0104 at the expected fee"
+  },
+  {
+    "subject": "exp-0105",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "14.97",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-3"
+    ],
+    "evidence": [
+      "f-5258d95229ad#3"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0105 settles exp-0105 at the expected fee"
+  },
+  {
+    "subject": "exp-0106",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "202.40",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-4"
+    ],
+    "evidence": [
+      "f-5258d95229ad#4"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0106 settles exp-0106 at the expected fee"
+  },
+  {
+    "subject": "exp-0107",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "95.38",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-5"
+    ],
+    "evidence": [
+      "f-5258d95229ad#5"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0107 settles exp-0107 at the expected fee"
+  },
+  {
+    "subject": "exp-0108",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "29.39",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-6"
+    ],
+    "evidence": [
+      "f-5258d95229ad#6"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0108 settles exp-0108 at the expected fee"
+  },
+  {
+    "subject": "exp-0109",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "21.10",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-7"
+    ],
+    "evidence": [
+      "f-5258d95229ad#7"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0109 settles exp-0109 at the expected fee"
+  },
+  {
+    "subject": "exp-0110",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "201.56",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-8"
+    ],
+    "evidence": [
+      "f-5258d95229ad#8"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0110 settles exp-0110 at the expected fee"
+  },
+  {
+    "subject": "exp-0111",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "209.82",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-9"
+    ],
+    "evidence": [
+      "f-5258d95229ad#9"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0111 settles exp-0111 at the expected fee"
+  },
+  {
+    "subject": "exp-0112",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "17.59",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-10"
+    ],
+    "evidence": [
+      "f-5258d95229ad#10"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0112 settles exp-0112 at the expected fee"
+  },
+  {
+    "subject": "exp-0113",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "219.51",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-11"
+    ],
+    "evidence": [
+      "f-5258d95229ad#11"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0113 settles exp-0113 at the expected fee"
+  },
+  {
+    "subject": "exp-0114",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "69.61",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-12"
+    ],
+    "evidence": [
+      "f-5258d95229ad#12"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0114 settles exp-0114 at the expected fee"
+  },
+  {
+    "subject": "exp-0115",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "181.87",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-13"
+    ],
+    "evidence": [
+      "f-5258d95229ad#13"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0115 settles exp-0115 at the expected fee"
+  },
+  {
+    "subject": "exp-0116",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "218.97",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-14"
+    ],
+    "evidence": [
+      "f-5258d95229ad#14"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0116 settles exp-0116 at the expected fee"
+  },
+  {
+    "subject": "exp-0117",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "78.12",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-15"
+    ],
+    "evidence": [
+      "f-5258d95229ad#15"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0117 settles exp-0117 at the expected fee"
+  },
+  {
+    "subject": "exp-0118",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "149.76",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-16"
+    ],
+    "evidence": [
+      "f-5258d95229ad#16"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0118 settles exp-0118 at the expected fee"
+  },
+  {
+    "subject": "exp-0119",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "87.60",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-17"
+    ],
+    "evidence": [
+      "f-5258d95229ad#17"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0119 settles exp-0119 at the expected fee"
+  },
+  {
+    "subject": "exp-0120",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "172.82",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-18"
+    ],
+    "evidence": [
+      "f-5258d95229ad#18"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0120 settles exp-0120 at the expected fee"
+  },
+  {
+    "subject": "exp-0121",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "49.79",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-19"
+    ],
+    "evidence": [
+      "f-5258d95229ad#19"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0121 settles exp-0121 at the expected fee"
+  },
+  {
+    "subject": "exp-0122",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "166.93",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-20"
+    ],
+    "evidence": [
+      "f-5258d95229ad#20"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0122 settles exp-0122 at the expected fee"
+  },
+  {
+    "subject": "exp-0123",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "170.35",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-21"
+    ],
+    "evidence": [
+      "f-5258d95229ad#21"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0123 settles exp-0123 at the expected fee"
+  },
+  {
+    "subject": "exp-0124",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "15.73",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-22"
+    ],
+    "evidence": [
+      "f-5258d95229ad#22"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0124 settles exp-0124 at the expected fee"
+  },
+  {
+    "subject": "exp-0125",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "228.05",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-23"
+    ],
+    "evidence": [
+      "f-5258d95229ad#23"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0125 settles exp-0125 at the expected fee"
+  },
+  {
+    "subject": "exp-0126",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "180.47",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-24"
+    ],
+    "evidence": [
+      "f-5258d95229ad#24"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0126 settles exp-0126 at the expected fee"
+  },
+  {
+    "subject": "exp-0127",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "164.54",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-25"
+    ],
+    "evidence": [
+      "f-5258d95229ad#25"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0127 settles exp-0127 at the expected fee"
+  },
+  {
+    "subject": "exp-0128",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "70.74",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-26"
+    ],
+    "evidence": [
+      "f-5258d95229ad#26"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0128 settles exp-0128 at the expected fee"
+  },
+  {
+    "subject": "exp-0129",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "202.55",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-27"
+    ],
+    "evidence": [
+      "f-5258d95229ad#27"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0129 settles exp-0129 at the expected fee"
+  },
+  {
+    "subject": "exp-0130",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "126.58",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-28"
+    ],
+    "evidence": [
+      "f-5258d95229ad#28"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0130 settles exp-0130 at the expected fee"
+  },
+  {
+    "subject": "exp-0131",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "148.53",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-29"
+    ],
+    "evidence": [
+      "f-5258d95229ad#29"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0131 settles exp-0131 at the expected fee"
+  },
+  {
+    "subject": "exp-0132",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "210.00",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-30"
+    ],
+    "evidence": [
+      "f-5258d95229ad#30"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0132 settles exp-0132 at the expected fee"
+  },
+  {
+    "subject": "exp-0133",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "133.24",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-31"
+    ],
+    "evidence": [
+      "f-5258d95229ad#31"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0133 settles exp-0133 at the expected fee"
+  },
+  {
+    "subject": "exp-0134",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "94.96",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-32"
+    ],
+    "evidence": [
+      "f-5258d95229ad#32"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0134 settles exp-0134 at the expected fee"
+  },
+  {
+    "subject": "exp-0135",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "119.87",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-33"
+    ],
+    "evidence": [
+      "f-5258d95229ad#33"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0135 settles exp-0135 at the expected fee"
+  },
+  {
+    "subject": "exp-0136",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "94.83",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-34"
+    ],
+    "evidence": [
+      "f-5258d95229ad#34"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0136 settles exp-0136 at the expected fee"
+  },
+  {
+    "subject": "exp-0137",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "28.36",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-35"
+    ],
+    "evidence": [
+      "f-5258d95229ad#35"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0137 settles exp-0137 at the expected fee"
+  },
+  {
+    "subject": "exp-0138",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "213.61",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-36"
+    ],
+    "evidence": [
+      "f-5258d95229ad#36"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0138 settles exp-0138 at the expected fee"
+  },
+  {
+    "subject": "exp-0139",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "66.15",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-37"
+    ],
+    "evidence": [
+      "f-5258d95229ad#37"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0139 settles exp-0139 at the expected fee"
+  },
+  {
+    "subject": "exp-0140",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "29.49",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-38"
+    ],
+    "evidence": [
+      "f-5258d95229ad#38"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0140 settles exp-0140 at the expected fee"
+  },
+  {
+    "subject": "exp-0141",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "218.71",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-39"
+    ],
+    "evidence": [
+      "f-5258d95229ad#39"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0141 settles exp-0141 at the expected fee"
+  },
+  {
+    "subject": "exp-0142",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "26.42",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-40"
+    ],
+    "evidence": [
+      "f-5258d95229ad#40"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0142 settles exp-0142 at the expected fee"
+  },
+  {
+    "subject": "exp-0143",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "222.79",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-41"
+    ],
+    "evidence": [
+      "f-5258d95229ad#41"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0143 settles exp-0143 at the expected fee"
+  },
+  {
+    "subject": "exp-0144",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "82.84",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-42"
+    ],
+    "evidence": [
+      "f-5258d95229ad#42"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0144 settles exp-0144 at the expected fee"
+  },
+  {
+    "subject": "exp-0145",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "132.36",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-43"
+    ],
+    "evidence": [
+      "f-5258d95229ad#43"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0145 settles exp-0145 at the expected fee"
+  },
+  {
+    "subject": "exp-0146",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "162.73",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-44"
+    ],
+    "evidence": [
+      "f-5258d95229ad#44"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0146 settles exp-0146 at the expected fee"
+  },
+  {
+    "subject": "exp-0147",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-31.73",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-45"
+    ],
+    "evidence": [
+      "f-5258d95229ad#45"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0147 settles exp-0147 at the expected fee"
+  },
+  {
+    "subject": "exp-0148",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-70.51",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-46"
+    ],
+    "evidence": [
+      "f-5258d95229ad#46"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0148 settles exp-0148 at the expected fee"
+  },
+  {
+    "subject": "exp-0149",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-55.79",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-47"
+    ],
+    "evidence": [
+      "f-5258d95229ad#47"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0149 settles exp-0149 at the expected fee"
+  },
+  {
+    "subject": "exp-0150",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-45.16",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-48"
+    ],
+    "evidence": [
+      "f-5258d95229ad#48"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0150 settles exp-0150 at the expected fee"
+  },
+  {
+    "subject": "exp-0151",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-84.49",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-49"
+    ],
+    "evidence": [
+      "f-5258d95229ad#49"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0151 settles exp-0151 at the expected fee"
+  },
+  {
+    "subject": "exp-0152",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "182.23",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-1"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#1"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0152 settles exp-0152 at the expected fee"
+  },
+  {
+    "subject": "exp-0153",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "172.15",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-2"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#2"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0153 settles exp-0153 at the expected fee"
+  },
+  {
+    "subject": "exp-0154",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "52.43",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-3"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#3"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0154 settles exp-0154 at the expected fee"
+  },
+  {
+    "subject": "exp-0155",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "17.73",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-4"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#4"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0155 settles exp-0155 at the expected fee"
+  },
+  {
+    "subject": "exp-0156",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "238.71",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-5"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#5"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0156 settles exp-0156 at the expected fee"
+  },
+  {
+    "subject": "exp-0157",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "101.43",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-6"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#6"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0157 settles exp-0157 at the expected fee"
+  },
+  {
+    "subject": "exp-0158",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "90.66",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-7"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#7"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0158 settles exp-0158 at the expected fee"
+  },
+  {
+    "subject": "exp-0159",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "5.09",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-8"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#8"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0159 settles exp-0159 at the expected fee"
+  },
+  {
+    "subject": "exp-0160",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-92.32",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-9"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#9"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0160 settles exp-0160 at the expected fee"
+  },
+  {
+    "subject": "exp-0161",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-270.56",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-10"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#10"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0161 settles exp-0161 at the expected fee"
+  },
+  {
+    "subject": "exp-0162",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-189.64",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-11"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#11"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0162 settles exp-0162 at the expected fee"
+  },
+  {
+    "subject": "exp-0163",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-178.04",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-12"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#12"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0163 settles exp-0163 at the expected fee"
+  },
+  {
+    "subject": "exp-0164",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-336.60",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-13"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#13"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0164 settles exp-0164 at the expected fee"
+  },
+  {
+    "subject": "exp-0165",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-193.72",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-14"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#14"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0165 settles exp-0165 at the expected fee"
+  },
+  {
+    "subject": "exp-0166",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-227.68",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-15"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#15"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0166 settles exp-0166 at the expected fee"
+  },
+  {
+    "subject": "exp-0167",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-40.64",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-16"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#16"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0167 settles exp-0167 at the expected fee"
+  },
+  {
+    "subject": "exp-0168",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-355.68",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-17"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#17"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0168 settles exp-0168 at the expected fee"
+  },
+  {
+    "subject": "exp-0169",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-262.24",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-18"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#18"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0169 settles exp-0169 at the expected fee"
+  },
+  {
+    "subject": "exp-0170",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-36.68",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-19"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#19"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0170 settles exp-0170 at the expected fee"
+  },
+  {
+    "subject": "exp-0171",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-227.44",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-20"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#20"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0171 settles exp-0171 at the expected fee"
+  },
+  {
+    "subject": "exp-0172",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-312.88",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-21"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#21"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0172 settles exp-0172 at the expected fee"
+  },
+  {
+    "subject": "exp-0173",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "-197.68",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-8604ae5b6f4f-22"
+    ],
+    "evidence": [
+      "f-8604ae5b6f4f#22"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-0173 settles exp-0173 at the expected fee"
+  },
+  {
+    "subject": "exp-9001",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M4_SPLIT_TO_ONE",
+    "reason": null,
+    "amount": "174.48",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-9cc20067145e-54",
+      "rec-f-9cc20067145e-55"
+    ],
+    "evidence": [
+      "f-9cc20067145e#54",
+      "f-9cc20067145e#55"
+    ],
+    "because": "M4_SPLIT_TO_ONE: 2 provider rows sum to exp-9001"
+  },
+  {
+    "subject": "exp-9101",
+    "side": "INTERNAL",
+    "outcome": "EXCEPTION",
+    "rule": null,
+    "reason": "MISSING_PROVIDER_RECORD",
+    "amount": "436.65",
+    "currency": "USD",
+    "residual": "436.65",
+    "counterparts": [],
+    "evidence": [],
+    "because": "no provider record for exp-9101 in a batch whose detail file has been ingested"
+  },
+  {
+    "subject": "exp-9201",
+    "side": "INTERNAL",
+    "outcome": "EXCEPTION",
+    "rule": "M5_PARTIAL_SETTLEMENT",
+    "reason": "PARTIAL_SETTLEMENT",
+    "amount": "485.20",
+    "currency": "USD",
+    "residual": "194.20",
+    "counterparts": [
+      "rec-f-5258d95229ad-50"
+    ],
+    "evidence": [
+      "f-5258d95229ad#50"
+    ],
+    "because": "M5_PARTIAL_SETTLEMENT: tx-9201 settles 30000 of 50000 for exp-9201; shortfall 19420"
+  },
+  {
+    "subject": "exp-9202",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M1_PROVIDER_TXN_ID",
+    "reason": null,
+    "amount": "194.20",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-51"
+    ],
+    "evidence": [
+      "f-5258d95229ad#51"
+    ],
+    "because": "M1_PROVIDER_TXN_ID: tx-9202 settles exp-9202 at the expected fee"
+  },
+  {
+    "subject": "exp-9301",
+    "side": "INTERNAL",
+    "outcome": "EXCEPTION",
+    "rule": null,
+    "reason": "CURRENCY_MISMATCH",
+    "amount": "242.45",
+    "currency": "EUR",
+    "residual": "242.45",
+    "counterparts": [
+      "rec-f-5258d95229ad-53"
+    ],
+    "evidence": [
+      "f-5258d95229ad#53"
+    ],
+    "because": "tx-9301 reports USD where exp-9301 expects EUR"
+  },
+  {
+    "subject": "exp-9401",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M3_REFUND_ACROSS_DAYS",
+    "reason": null,
+    "amount": "-64.00",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-54"
+    ],
+    "evidence": [
+      "f-5258d95229ad#54"
+    ],
+    "because": "M3_REFUND_ACROSS_DAYS: rf-9401 settles exp-9401 at the expected fee"
+  },
+  {
+    "subject": "exp-9501",
+    "side": "INTERNAL",
+    "outcome": "MATCHED",
+    "rule": "M2_REF_AMOUNT_CURRENCY",
+    "reason": null,
+    "amount": "74.47",
+    "currency": "USD",
+    "residual": "0.00",
+    "counterparts": [
+      "rec-f-5258d95229ad-55"
+    ],
+    "evidence": [
+      "f-5258d95229ad#55"
+    ],
+    "because": "M2_REF_AMOUNT_CURRENCY: ch-9501-r2 settles exp-9501 at the expected fee"
+  },
+  {
+    "subject": "rec-f-5258d95229ad-52",
+    "side": "PROVIDER",
+    "outcome": "EXCEPTION",
+    "rule": null,
+    "reason": "DUPLICATE_PROVIDER_RECORD",
+    "amount": "194.20",
+    "currency": "USD",
+    "residual": "194.20",
+    "counterparts": [],
+    "evidence": [
+      "f-5258d95229ad#52"
+    ],
+    "because": "tx-9202 repeats a row already matched, with identical gross, fee and currency"
+  },
+  {
+    "subject": "rec-f-d3cd39b8eb3d-52",
+    "side": "PROVIDER",
+    "outcome": "EXCEPTION",
+    "rule": null,
+    "reason": "UNKNOWN_TO_LEDGER",
+    "amount": "436.65",
+    "currency": "USD",
+    "residual": "436.65",
+    "counterparts": [],
+    "evidence": [
+      "f-d3cd39b8eb3d#52"
+    ],
+    "because": "tx-9102 appears in a provider file and in no internal record"
+  }
+]

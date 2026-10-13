@@ -1,0 +1,23 @@
+%% generated from src/saga.ts by scripts/generate.ts -- do not edit
+stateDiagram-v2
+    [*] --> RUNNING
+    RUNNING --> COMPENSATING: step_failed
+    RUNNING --> COMPENSATING: cancel_requested
+    RUNNING --> PIVOTED: pivot_committed
+    PIVOTED --> COMPLETED: forward_complete
+    PIVOTED --> MANUAL_REPAIR: forward_exhausted
+    COMPENSATING --> COMPENSATED: compensations_complete
+    COMPENSATING --> COMPENSATION_FAILED: compensation_exhausted
+    COMPENSATION_FAILED --> COMPENSATING: operator_retried
+    COMPENSATION_FAILED --> CLOSED_MANUALLY: operator_closed
+    MANUAL_REPAIR --> PIVOTED: operator_resumed
+    MANUAL_REPAIR --> CLOSED_MANUALLY: operator_closed
+    COMPLETED --> [*]
+    COMPENSATED --> [*]
+    CLOSED_MANUALLY --> [*]
+    note right of COMPENSATION_FAILED
+        left only by payments operations
+    end note
+    note right of MANUAL_REPAIR
+        left only by payments operations
+    end note
